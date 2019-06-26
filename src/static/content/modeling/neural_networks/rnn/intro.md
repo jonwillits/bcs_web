@@ -4,3 +4,4 @@ In this module we will learn what a RNN is, how it works, and how to build, trai
 
 ## Background
 
+TTTTTTTTT
