@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="wrapper">
+
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                {% for node in branch_nodes %}
+                    <{{ 'h' + (loop.index + 1)|string }}>{{ node }}<{{ '/h' + (loop.index + 1)|string }}>
+                    <hr>
+                {% endfor %}
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Submodules</p>
+
+                {% for k, v in submodules %}
+                    <li {{ "class=active" if loop.index == 1 }}>
+                        <a href="#{{ k }}Submenu" data-toggle="collapse" aria-expanded="false">
+                            {{ k }}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="collapse list-unstyled" id="{{ k }}Submenu">
+                            {% for i in v %}
+                                 <li><a href="#">{{ i }}</a></li>
+                                {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+
+                <p>Miscellaneous</p>
+
+                {% for k, v in misc %}
+                    <li {{ "class=active" if loop.index == 1 }}>
+                        <a href="#{{ k }}Submenu" data-toggle="collapse" aria-expanded="false">
+                            {{ k }}
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="collapse list-unstyled" id="{{ k }}Submenu">
+                            {% for i in v %}
+                                 <li><a href="#">{{ i }}</a></li>
+                                {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+
+            </ul>
+
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content-module">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span>Toggle Sidebar</span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            {% for i in range(3) %}
+                             <li><a href="#">{{ i }}</a>      </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">{{ branch_nodes[-1] }}</div>
+                <div class="panel-body">
+                    {{ content | safe }}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- jQuery CDN -->
+     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+     <!-- Bootstrap Js CDN -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $('#sidebarCollapse').on('click', function () {
+                 $('#sidebar').toggleClass('active');
+             });
+         });
+     </script>
+
+
+{% endblock %}
+
+
+

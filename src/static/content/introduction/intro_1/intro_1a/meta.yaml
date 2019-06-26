@@ -1,0 +1,18 @@
+submodules:
+- - Stuff
+  - - Stuff 1
+    - Stuff 2
+- - Things
+  - - Things 1
+    - Things 2
+- - Theories
+  - - Theory 1
+    - Theory 2
+
+misc:
+- - Homework
+  - - Homework 1
+    - Homework 2
+- - Readings
+  - - Readings 1
+    - Readings 2

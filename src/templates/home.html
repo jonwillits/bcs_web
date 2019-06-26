@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Welcome to Brain, Cognitive, and Behavioral Science University.</div>
+        <div class="panel-body content-text">
+            <p>Visit the <a href="{{ url_for('modules') }}">Modules</a> page to see the list of modules we have so far.</p>
+            <p>Visit the <a href="{{ url_for('blog') }}">Blog</a>, which we hope to update frequently.</p>
+            <p>Visit the <a href="{{ url_for('about') }}">About</a> page, to see who we are and to learn more about our mission.</p>
+        </div>
+    </div>
+
+{% endblock %}
