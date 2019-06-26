@@ -1,13 +1,28 @@
 submodules:
-- - Stuff
-  - - Stuff 1
-    - Stuff 2
-- - Things
-  - - Things 1
-    - Things 2
-- - Theories
-  - - Theory 1
-    - Theory 2
+- - 1. What is BCS?
+  - - Definitions
+  - - Ten Questions
+  - - Antecedents
+    - - Philosophy
+    - - Scientific Revolution
+    - - Early Science
+    - - Behaviroism
+  - - Mind & Brain
+    - - Cognitive Revolution
+    - - Early Neuroscience
+    - - Remaining Questions
+  - - Defining BCS
+    - - Neuroscience
+    - - Cognitive Psych
+    - - Cog Neuro
+    - - Computational Approaches
+    - - Interdisciplinary BCS
+  - - The Two Track Mind
+- - 2. Philosophy of Mind & Brain
+  - - Goals and Methods
+  - - History of Philosophy
+  - - Philosophy of Mind
+  - - Philosophy of BCS
 
 misc:
 - - Homework
