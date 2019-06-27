@@ -31,11 +31,23 @@ def modules():
 
 @app.route('/module/<b>')
 def module(b):
+
+    # TODO
+    if '$' in b:
+        tmp1, md_file_name = b.split('$')
+        branch_path_name = tmp1.replace('+', '/')
+        md_file_name = md_file_name + '.md'
+        nodes = tmp1.replace('_', ' ').split('+')
+    else:
+        branch_path_name = b.replace('+', '/')
+        md_file_name = 'landing.md'
+        nodes = b.replace('_', ' ').split('+')
+
     static_path_name = app.config['STATIC_PATH_NAME']
-    branch_path_name = b.replace('+', '/')
-    content, submodules = load_content_and_submodules(static_path_name, branch_path_name)
+
+    content, submodules = load_content_and_submodules(static_path_name, branch_path_name, md_file_name)
     return render_template('module.html',
-                           branch_nodes=b.replace('_', ' ').split('+'),
+                           nodes=nodes,
                            content=content,
                            submodules=submodules)
 

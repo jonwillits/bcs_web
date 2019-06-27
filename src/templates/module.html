@@ -7,7 +7,7 @@
         <!-- Sidebar Holder -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                {% for node in branch_nodes %}
+                {% for node in nodes %}
                     <{{ 'h' + (loop.index + 1)|string }}>{{ node }}<{{ '/h' + (loop.index + 1)|string }}>
                     <hr>
                 {% endfor %}
@@ -63,7 +63,7 @@
 
 
             <div class="panel panel-default">
-                <div class="panel-heading">{{ branch_nodes[-1] }}</div>
+                <div class="panel-heading">{{ nodes[-1] }}</div>
                 <div class="panel-body">
                     {{ content | safe }}
                 </div>

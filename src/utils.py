@@ -29,12 +29,11 @@ def open_file(content_path, file_name):
     return f
 
 
-def load_content_and_submodules(static_path_name, branch_path_name):
+def load_content_and_submodules(static_path_name, branch_path_name, md_file_name):
 
     content_path = Path(static_path_name) / branch_path_name.lower()
 
     # content
-    md_file_name = 'landing.md'
     md_file = open_file(content_path, md_file_name)
     if md_file is None:
         print('Did not find {} in:\n{}'.format(md_file_name, content_path))
