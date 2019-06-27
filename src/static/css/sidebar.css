@@ -1,13 +1,5 @@
-
-
-
-p {
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
-}
-
+@charset "UTF-8";
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
@@ -37,9 +29,19 @@ p {
 }
 
 /*top of sidebar*/
+#sidebar .sidebar-header hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 #sidebar .sidebar-header {
-    padding: 20px;
+    padding: 10px;
+}
+
+#sidebar .sidebar-header a {
+    padding: 10px;
     color: darkorange;
+    text-decoration: none;
 }
 
 /*list of dummy headings*/

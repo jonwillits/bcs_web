@@ -8,7 +8,12 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 {% for node in nodes %}
-                    <{{ 'h' + (loop.index + 1)|string }}>{{ node }}<{{ '/h' + (loop.index + 1)|string }}>
+                    {{ loop.index0 * 4 * '&nbsp;' | safe}}
+                    {%  if loop.index == loop.length %}
+                        <a href="landing">&rArr; {{ node }}</a>
+                    {%  else %}
+                        &rArr; {{ node }}
+                    {%  endif %}
                     <hr>
                 {% endfor %}
             </div>
@@ -63,7 +68,7 @@
 
 
             <div class="panel panel-default">
-                <div class="panel-heading">{{ leaf.capitalize() }}</div>
+                <div class="panel-heading">{{ heading }}</div>
                 <div class="panel-body">
                     {{ content | safe }}
                 </div>

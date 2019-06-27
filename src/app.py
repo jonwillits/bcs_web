@@ -33,14 +33,16 @@ def modules():
 def module(branch, leaf='landing'):
     print('branch:', branch)
     print('leaf:', leaf)
+    #
     branch_path_name = branch.replace('+', '/')
     md_file_name = '{}.md'.format(leaf)
-    nodes = branch.replace('_', ' ').split('+')
     static_path_name = app.config['STATIC_PATH_NAME']
-    content, submodules = load_content_and_submodules(static_path_name, branch_path_name, md_file_name)
+    content, submodules = load_content_and_submodules(static_path_name,
+                                                      branch_path_name,
+                                                      md_file_name)
     return render_template('module.html',
-                           nodes=nodes,
-                           leaf=leaf,
+                           nodes=branch.replace('_', ' ').split('+'),
+                           heading=leaf.replace('_', ' ').capitalize(),
                            content=content,
                            submodules=submodules)
 
