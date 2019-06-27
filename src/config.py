@@ -1,0 +1,4 @@
+
+
+class Defaults:
+    leaf = 'landing'

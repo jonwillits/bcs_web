@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import os
 
 from src.utils import load_content_and_submodules
+from src import config
 
 app = Flask(__name__)
 
@@ -28,9 +29,9 @@ def modules():
     return render_template('modules.html')
 
 
-@app.route('/module/<branch>')
+@app.route('/module/<branch>/')
 @app.route('/module/<branch>/<leaf>')
-def module(branch, leaf='landing'):
+def module(branch, leaf=config.Defaults.leaf):
     print('branch:', branch)
     print('leaf:', leaf)
     #

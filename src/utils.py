@@ -1,12 +1,9 @@
 import markdown
 from pathlib import Path
 
+from src import config
 
-DEFAULT_CONTENT = '''
-<h2>Content coming soon...</h2>
-<h3><a href='/modules' style="text-decoration: none;">&lArr; Back to Modules</a></h3>
 
-'''
 
 DEFAULT_META = """
 <li>
@@ -29,6 +26,15 @@ def open_file(content_path, file_name):
     return f
 
 
+def default_content(md_file_name):
+    if md_file_name == config.Defaults.leaf + '.md':
+        return "<h2>Content coming soon...</h2>" \
+               "<h3><a href='/modules' style='text-decoration: none;'>&lArr; Return to Modules</a></h3>"
+    else:
+        return "<h2>Content coming soon...</h2>" \
+               "<h3><a href='landing' style='text-decoration: none;'>&lArr; Return to Module</a></h3>"
+
+
 def load_content_and_submodules(static_path_name, branch_path_name, md_file_name):
 
     content_path = Path(static_path_name) / branch_path_name.lower()
@@ -37,7 +43,7 @@ def load_content_and_submodules(static_path_name, branch_path_name, md_file_name
     md_file = open_file(content_path, md_file_name)
     if md_file is None:
         print('Did not find {} in:\n{}'.format(md_file_name, content_path))
-        return DEFAULT_CONTENT, DEFAULT_META
+        return default_content(md_file_name), DEFAULT_META
     md = md_file.read()
     content = markdown.markdown(md, extensions=['extra', 'smarty'], output_format='html5')
 
@@ -45,7 +51,7 @@ def load_content_and_submodules(static_path_name, branch_path_name, md_file_name
     sm_file = open_file(content_path, sm_file_name)
     if sm_file is None:
         print('Did not find {} in:\n{}'.format(sm_file_name, content_path))
-        return DEFAULT_CONTENT, DEFAULT_META
+        return default_content(md_file_name), DEFAULT_META
     submodules = sm_file.read()
 
     return content, submodules
