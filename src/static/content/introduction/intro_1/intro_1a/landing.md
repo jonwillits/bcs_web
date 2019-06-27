@@ -1,7 +1,8 @@
-## Intro
+## Landing Page
 
-In this module we will be introduced to the introduction. A gentle way to ease into the material. 
-A CHANGE
+This is where the user lands when the module is opened. 
+
+A good place for a pic?
 
 ## A Table
 

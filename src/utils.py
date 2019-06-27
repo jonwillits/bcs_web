@@ -1,4 +1,3 @@
-import yaml
 import markdown
 from pathlib import Path
 
@@ -9,8 +8,16 @@ DEFAULT_CONTENT = '''
 
 '''
 
-DEFAULT_META = {'submodules': (('Overview', ['Coming Soon...']), ('Overview', ['Coming Soon...'])),
-                'misc': (('Homework', ['Coming Soon...']), ('Homework', ['Coming Soon...']))}
+DEFAULT_META = """
+<li>
+<a href="#" class="dropdown-jw">Default<span class="caret"></span></a>
+<ul class="collapse list-unstyled" class="dropdown-jw-container">
+    <a href="#">d1</a>
+    <a href="#">d2</a>
+    <a href="#">d3</a>
+</ul>
+</li>
+"""
 
 
 def open_file(content_path, file_name):
@@ -22,12 +29,12 @@ def open_file(content_path, file_name):
     return f
 
 
-def load_content_and_meta(static_path_name, branch_path_name):
+def load_content_and_submodules(static_path_name, branch_path_name):
 
     content_path = Path(static_path_name) / branch_path_name.lower()
 
     # content
-    md_file_name = 'intro.md'
+    md_file_name = 'landing.md'
     md_file = open_file(content_path, md_file_name)
     if md_file is None:
         print('Did not find {} in:\n{}'.format(md_file_name, content_path))
@@ -35,12 +42,11 @@ def load_content_and_meta(static_path_name, branch_path_name):
     md = md_file.read()
     content = markdown.markdown(md, extensions=['extra', 'smarty'], output_format='html5')
 
-    # meta
-    yaml_file_name = 'meta.yaml'
-    yaml_file = open_file(content_path, yaml_file_name)
-    if yaml_file is None:
-        print('Did not find {} in:\n{}'.format(yaml_file_name, content_path))
+    sm_file_name = 'submodules.html'
+    sm_file = open_file(content_path, sm_file_name)
+    if sm_file is None:
+        print('Did not find {} in:\n{}'.format(sm_file_name, content_path))
         return DEFAULT_CONTENT, DEFAULT_META
-    meta = yaml.load(yaml_file)
+    submodules = sm_file.read()
 
-    return content, meta
+    return content, submodules

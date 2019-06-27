@@ -16,19 +16,7 @@
             <ul class="list-unstyled components">
                 <p>Submodules</p>
 
-                {% for k, v in submodules %}
-                    <li {{ "class=active" if loop.index == 1 }}>
-                        <a href="#{{ k }}Submenu" data-toggle="collapse" aria-expanded="false">
-                            {{ k }}
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="collapse list-unstyled" id="{{ k }}Submenu">
-                            {% for i in v %}
-                                 <li><a href="#">{{ i }}</a></li>
-                                {% endfor %}
-                        </ul>
-                    </li>
-                {% endfor %}
+                {{ submodules | safe }}
 
                 <p>Miscellaneous</p>
 
@@ -40,8 +28,8 @@
                         </a>
                         <ul class="collapse list-unstyled" id="{{ k }}Submenu">
                             {% for i in v %}
-                                 <li><a href="#">{{ i }}</a></li>
-                                {% endfor %}
+                                <li><a href="#">{{ i }}</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                 {% endfor %}
@@ -66,7 +54,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             {% for i in range(3) %}
-                             <li><a href="#">{{ i }}</a>      </li>
+                                <li><a href="#">{{ i }}</a>      </li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -86,21 +74,38 @@
     </div>
 
 
+    <script>
+    /* module side menu script */
+	/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-jw");
+    var i;
 
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+    </script>
 
 
     <!-- jQuery CDN -->
-     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-     <!-- Bootstrap Js CDN -->
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-     <script type="text/javascript">
-         $(document).ready(function () {
-             $('#sidebarCollapse').on('click', function () {
-                 $('#sidebar').toggleClass('active');
-             });
-         });
-     </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
 
 
 {% endblock %}
