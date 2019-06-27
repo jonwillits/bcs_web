@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 import os
-import pprint
 
 from src.utils import load_content_and_submodules
 
@@ -29,25 +28,19 @@ def modules():
     return render_template('modules.html')
 
 
-@app.route('/module/<b>')
-def module(b):
-
-    # TODO
-    if '$' in b:
-        tmp1, md_file_name = b.split('$')
-        branch_path_name = tmp1.replace('+', '/')
-        md_file_name = md_file_name + '.md'
-        nodes = tmp1.replace('_', ' ').split('+')
-    else:
-        branch_path_name = b.replace('+', '/')
-        md_file_name = 'landing.md'
-        nodes = b.replace('_', ' ').split('+')
-
+@app.route('/module/<branch>')
+@app.route('/module/<branch>/<leaf>')
+def module(branch, leaf='landing'):
+    print('branch:', branch)
+    print('leaf:', leaf)
+    branch_path_name = branch.replace('+', '/')
+    md_file_name = '{}.md'.format(leaf)
+    nodes = branch.replace('_', ' ').split('+')
     static_path_name = app.config['STATIC_PATH_NAME']
-
     content, submodules = load_content_and_submodules(static_path_name, branch_path_name, md_file_name)
     return render_template('module.html',
                            nodes=nodes,
+                           leaf=leaf,
                            content=content,
                            submodules=submodules)
 

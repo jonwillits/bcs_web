@@ -1,4 +1,4 @@
-## Landing Page
+## A title
 
 This is where the user lands when the module is opened. 
 
