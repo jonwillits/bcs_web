@@ -23,7 +23,7 @@ const smallNode = {
 
 const myTreeData = [
     {
-        name: 'BCS-Web',
+        name: 'BCS-Web',  // this name is used in JS code
         attributes: {
         },
         children: [
@@ -88,7 +88,7 @@ const myTreeData = [
                                         name: 'Introduction',
                                     }]
 
-                            }]
+                            }],
                     },
                     {
                         name: 'Computation & AI',
@@ -113,7 +113,7 @@ const myTreeData = [
                     {
                         name: 'Language',
                     },
-                ]
+                ],
             },
         ],
     },
@@ -193,10 +193,10 @@ export class ModuleTree extends React.Component {
     static handleClick(nodeData, e) {
         if (!nodeData._children) {
             console.log(nodeData);
-            var parent_names = [nodeData.name.replace(' ', '_')];
+            var parent_names = [nodeData.name.replace(/\s+/g, '_')];
             let n = nodeData;
             console.log(n.parent.name);
-            while (n.parent.name !== 'BcsWeb') {
+            while (n.parent.name !== 'BCS-Web') {
                 n = n.parent;
                 parent_names.push(n.name.replace(' ', '_'))
             }
