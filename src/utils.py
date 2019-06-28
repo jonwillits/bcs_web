@@ -4,6 +4,9 @@ from pathlib import Path
 from src import config
 
 
+def to_heading(leaf):
+    return ' '.join([w.capitalize() for w in leaf.split('_')])
+
 
 def open_file(content_path, file_name):
     p = content_path / file_name

@@ -2,6 +2,7 @@ from flask import Flask, render_template
 import os
 
 from src.utils import load_content_and_submodules
+from src.utils import to_heading
 from src import config
 
 app = Flask(__name__)
@@ -43,7 +44,7 @@ def module(branch, leaf=config.Defaults.leaf):
                                                       md_file_name)
     return render_template('module.html',
                            nodes=branch.replace('_', ' ').split('/'),
-                           heading=leaf.replace('_', ' ').capitalize(),
+                           heading=to_heading(leaf),
                            content=content,
                            submodules=submodules)
 
