@@ -14,73 +14,106 @@ const largeNode = {
 const smallNode = {
     shape: 'rect',
     shapeProps: {
-        width: 140,
+        width: 100,
         height: 50,
         x: -70,
         y: -25,
     }
 };
 
-// TODO generate tree from directory structure
-
 const myTreeData = [
     {
-        name: 'BcsWeb',
+        name: 'BCS-Web',
         attributes: {
         },
         children: [
             {
-                name: 'Introduction',
+                name: 'Intro to BCS',
+            },
+            {
+                name: 'Background & Methods',
                 children: [
                     {
-                        name: 'Intro 1',
+                        name: 'Statistical Inference',
                         children: [
                             {
-                                name: 'Intro 1a'
+                                name: 'Intro'
                             },
+                        ],
+                    },
+                    {
+                        name: 'Research Methods',
+                        children: [
                             {
-                                name: 'Intro 1b'
-                            },
-                            {
-                                name: 'Intro 1c'
+                                name: 'Intro'
                             },
                         ],
 
                     },
                     {
-                        name: 'Intro 2'
-                    },
-                    {
-                        name: 'Intro 3'
+                        name: 'Programming',
+                        children: [
+                            {
+                                name: 'Python'
+                            },
+                            {
+                                name: 'R'
+                            },
+                            {
+                                name: 'Data Visualization'
+                            },
+                        ],
                     },
                 ],
             },
             {
-                name: 'Statistics',
-            },
-            {
-                name: 'Modeling',
+                name: 'Subdomains',
                 children: [
                     {
-                        name: 'Neural Networks',
+                        name: 'Philosophy',
+                    },
+                    {
+                        name: 'Neuroscience',
+                    },
+                    {
+                        name: 'Psychology',
                         children: [
                             {
-                                name: 'RNN',
+                                name: 'Introduction',
                             },
                             {
-                                name: 'CNN',
+                                name: 'Cognitive',
+                                children: [
+                                    {
+                                        name: 'Introduction',
+                                    }]
+
                             }]
                     },
                     {
-                        name: 'Bayesian Models',
+                        name: 'Computation & AI',
                     },
                     {
-                        name: 'Deep Learning',
+                        name: 'Linguistics',
+                    },
+                    {
+                        name: 'Anthropology',
+                    },
+                    {
+                        name: 'Education',
                     },
                 ],
             },
             {
-                name: 'Semantics',
+                name: 'Topics',
+                children: [
+                    {
+                        name: 'Concepts & Semantics',
+                    },
+                    {
+                        name: 'Language',
+                    },
+                ]
             },
         ],
     },
@@ -92,13 +125,13 @@ const linksStyle = {
 };
 
 const nodeNameStyle = {
-    fontSize: 26,
-    textDecoration: 'underline',
+    fontSize: 16,
     strokeWidth: 0,
+    textDecoration: 'underline',
 };
 
 const leafNodeNameStyle = {
-    fontSize: 26,
+    fontSize: 16,
     strokeWidth: 0,
 };
 

@@ -4,7 +4,6 @@ from pathlib import Path
 from src import config
 
 
-
 DEFAULT_META = """
 <li>
 <a href="#" class="dropdown-jw">Default<span class="caret"></span></a>
