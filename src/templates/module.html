@@ -10,9 +10,11 @@
                 {% for node in nodes %}
                     {{ loop.index0 * 4 * '&nbsp;' | safe}}
                     {%  if loop.index == loop.length %}
-                        <a href={{ url_for('module', branch='', leaf='landing') }}>&rArr; {{ node }}</a>
+                        <a href={{ url_for('module', branch='/'.join(nodes), leaf='landing') }}>
+                            &rArr; {{ node.replace('_', ' ') }}
+                        </a>
                     {%  else %}
-                        &rArr; {{ node }}
+                        &rArr; {{ node.replace('_', ' ') }}
                     {%  endif %}
                     <hr>
                 {% endfor %}

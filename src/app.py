@@ -43,7 +43,7 @@ def module(branch, leaf=config.Defaults.leaf):
                                                       branch_path_name,
                                                       md_file_name)
     return render_template('module.html',
-                           nodes=branch.replace('_', ' ').split('/'),
+                           nodes=branch.split('/'),
                            heading=to_heading(leaf),
                            content=content,
                            submodules=submodules)
