@@ -200,7 +200,7 @@ export class ModuleTree extends React.Component {
                 n = n.parent;
                 parent_names.push(n.name.replace(' ', '_'))
             }
-            const branchName = parent_names.reverse().join('+');
+            const branchName = parent_names.reverse().join('/');
             var url_start = window.location.href.replace('modules', '');
             window.location.href = url_start  + 'module' + '/' + branchName;
         }

@@ -10,7 +10,7 @@
                 {% for node in nodes %}
                     {{ loop.index0 * 4 * '&nbsp;' | safe}}
                     {%  if loop.index == loop.length %}
-                        <a href="landing">&rArr; {{ node }}</a>
+                        <a href={{ url_for('module', branch='', leaf='landing') }}>&rArr; {{ node }}</a>
                     {%  else %}
                         &rArr; {{ node }}
                     {%  endif %}
@@ -19,25 +19,12 @@
             </div>
 
             <ul class="list-unstyled components">
-                <p>Submodules</p>
 
-                {{ submodules | safe }}
-
-                <p>Miscellaneous</p>
-
-                {% for k, v in misc %}
-                    <li {{ "class=active" if loop.index == 1 }}>
-                        <a href="#{{ k }}Submenu" data-toggle="collapse" aria-expanded="false">
-                            {{ k }}
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="collapse list-unstyled" id="{{ k }}Submenu">
-                            {% for i in v %}
-                                <li><a href="#">{{ i }}</a></li>
-                            {% endfor %}
-                        </ul>
-                    </li>
-                {% endfor %}
+                {%  if submodules %}
+                    <p>Submodules</p>
+                    {{ submodules | safe }}
+                {%  endif %}
+{#                <p>Miscellaneous</p>#}
 
             </ul>
 

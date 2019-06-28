@@ -29,8 +29,8 @@ def modules():
     return render_template('modules.html')
 
 
-@app.route('/module/<branch>/')
-@app.route('/module/<branch>/<leaf>')
+@app.route('/module/<path:branch>/')
+@app.route('/module/<path:branch>/leaf=<leaf>')
 def module(branch, leaf=config.Defaults.leaf):
     print('branch:', branch)
     print('leaf:', leaf)
@@ -42,7 +42,7 @@ def module(branch, leaf=config.Defaults.leaf):
                                                       branch_path_name,
                                                       md_file_name)
     return render_template('module.html',
-                           nodes=branch.replace('_', ' ').split('+'),
+                           nodes=branch.replace('_', ' ').split('/'),
                            heading=leaf.replace('_', ' ').capitalize(),
                            content=content,
                            submodules=submodules)
