@@ -25,7 +25,7 @@ What if an evil demon was deceiving him, and falsifying his sensory input.
 All of the conclusions he could draw from observing the world could be a lie!
 How could he know if anything he believes is actually true?
 Descartes concluded that there was one thing he could be certain of.
-This is teh fact that he must, in fact, exist. 
+This is the fact that he must, in fact, exist. 
 Because if he did not exist, then there was no way he could be thinking about this uncertainty, or asking this question, in the first place.
 The very fact that he could think, was evidence that he did, in fact, exist.
 <br>
@@ -39,11 +39,14 @@ Some text
 <br>
 
 ### Check your understanding
-1. According to the text above, what is the definition of a mind?
-    <li>What is it's purpose?
-    <li>What are its properties?
-    <li>What are its functions?
-<br>
-2. How doe the text say we should approach the question of what counts as a mind, and whether we can consider infants,
-nonhuman animals, and machines to have minds?
+<ol>
+    <li>According to the text above, what is the definition of a mind?
+    <ul>
+        <li>What is it's purpose?
+        <li>What are its properties?
+        <li>What are its functions?
+    </ul>
+    <li>How does the text say we should approach the question of what counts as a mind, and whether we can consider infants,
+        nonhuman animals, and machines to have minds?
+<ul>
 
