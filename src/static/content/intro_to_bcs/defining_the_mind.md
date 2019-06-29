@@ -1,11 +1,13 @@
 ## Pre-Reading Questions
 
+
 #### How do you define the mind?
 Think about your mind for a moment, if you can?
 <ul>
     <li>What is your mind's purpose?
     <li>What are its properties or subcomponents? 
 </ul>
+
 
 #### What counts as a mind?
 <ul>
@@ -27,11 +29,14 @@ This is teh fact that he must, in fact, exist.
 Because if he did not exist, then there was no way he could be thinking about this uncertainty, or asking this question, in the first place.
 The very fact that he could think, was evidence that he did, in fact, exist.
 
+
 #### A definition of mind
 Some text
 
+
 #### What counts as a mind
 Some text
+
 
 ## Check your understanding
 1. According to the text above, what is the definition of a mind?
