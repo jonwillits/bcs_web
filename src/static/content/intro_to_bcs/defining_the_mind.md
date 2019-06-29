@@ -1,5 +1,4 @@
-## Pre-Reading Questions
-
+### Pre-Reading Questions
 
 #### How do you define the mind?
 Think about your mind for a moment, if you can?
@@ -7,7 +6,7 @@ Think about your mind for a moment, if you can?
     <li>What is your mind's purpose?
     <li>What are its properties or subcomponents? 
 </ul>
-
+<br>
 
 #### What counts as a mind?
 <ul>
@@ -15,8 +14,9 @@ Think about your mind for a moment, if you can?
     <li>Do newborn infants have minds? When does the mind "begin"?
     <li>Can computers or other human-made things have a mind? Why or why not.
 </ul>
+<br>
 
-## What is a mind?
+### What is a mind?
 Your mind should be easy to understand. Consider how much experience you have with it. 
 Every moment you are there, it is there too. 
 In fact, this equivalence of your mind with your very existence was at the core of the French philosopher Descartes’s "I think, therefore I am" argument.
@@ -28,22 +28,22 @@ Descartes concluded that there was one thing he could be certain of.
 This is teh fact that he must, in fact, exist. 
 Because if he did not exist, then there was no way he could be thinking about this uncertainty, or asking this question, in the first place.
 The very fact that he could think, was evidence that he did, in fact, exist.
+<br>
 
-
-#### A definition of mind
+### A definition of mind
 Some text
+<br>
 
-
-#### What counts as a mind
+### What counts as a mind?
 Some text
+<br>
 
-
-## Check your understanding
+### Check your understanding
 1. According to the text above, what is the definition of a mind?
-<li>What is it's purpose?
-<li>What are its properties?
-<li>What are its functions?
-
+    <li>What is it's purpose?
+    <li>What are its properties?
+    <li>What are its functions?
+<br>
 2. How doe the text say we should approach the question of what counts as a mind, and whether we can consider infants,
 nonhuman animals, and machines to have minds?
 
