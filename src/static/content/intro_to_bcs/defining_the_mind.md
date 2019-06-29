@@ -1,13 +1,13 @@
 ## Pre-Reading Questions
 
-# How do you define the mind?
+### How do you define the mind?
 Think about your mind for a moment, if you can?
 <ul>
     <li>What is your mind's purpose?
     <li>What are its properties or subcomponents? 
 </ul>
 
-# What counts as a mind?
+### What counts as a mind?
 <ul>
     <li>Do nonhuman animals have minds? Why or why not? How would you know?
     <li>Do newborn infants have minds? When does the mind "begin"?
@@ -25,10 +25,10 @@ Descartes concluded that the the one thing he could be certain of was that he do
 because if he did not, then there was no way he could be thinking about this uncertainty in the first place.
 The very fact that he could think, was evidence that he did, in fact, exist.
 
-# A definition of mind
+### A definition of mind
 Some text
 
-# What counts as a mind
+### What counts as a mind
 Some text
 
 ## Check your understanding
