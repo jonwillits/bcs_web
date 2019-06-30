@@ -73,7 +73,7 @@
     display: block;
     text-decoration: none;
     position: relative;  /*required to position caret*/
-    background: #000066;
+    background: #171940;
 }
 
 #sidebar ul li a:hover {
@@ -87,21 +87,21 @@
 #sidebar ul ul li a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #000088;
+    background: #181B4B;
 }
 
 /*dropdown 2nd level*/
 #sidebar ul ul ul li a {
     font-size: 0.8em !important;
     padding-left: 60px !important;
-    background: #0000AA;
+    background: #191c55;
 }
 
 /*dropdown 4th level*/
 #sidebar ul ul ul ul li a {
     font-size: 0.7em !important;
     padding-left: 90px !important;
-    background: #0000CC;
+    background: #191C55;
 }
 
 /*this affects module tree in unexpected way - how to restrict this to aparticular url?*/
