@@ -4,9 +4,9 @@ and cognitive science. Brain and Cognitive Science (BCS) is a very broad, interd
 field, incorporating techniques and knowledge from low-level subdomains like biology and 
 neuroscience, to high level subdomains like psychology, anthropology, and linguistics. BCS
 is used to study a vast array of topics, including:
+
 - how humans and animals perceive, learn, and remember information
-- how human nature and human culture have come to be, and how they shape individuals, 
-groups, and society; 
+- how human nature and human culture have come to be, and how they shape individuals, groups, and society; 
 - what is the nature of the mind and intelligence, and how it may be different in adults 
 and children, in human and in nonhuman animals, and in humans and machines 
 
