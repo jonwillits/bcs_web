@@ -64,6 +64,15 @@ const myTreeData = [
                             },
                         ],
                     },
+                    {
+                        name: 'Computational Modeling',
+                        children: [
+                            {
+                                name: 'Intro'
+                            },
+                        ],
+
+                    },
                 ],
             },
             {
