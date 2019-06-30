@@ -1,4 +1,6 @@
-## About this Module
+## What is Brain and Cognitive Science?
+
+# About this Module
 This module is designed to provide an introduction to the scientific study of the brain,
 and cognitive science. Brain and Cognitive Science (BCS) is a very broad, interdisciplinary
 field, incorporating techniques and knowledge from low-level subdomains like biology and 
@@ -10,7 +12,7 @@ groups, and society;
 - what is the nature of the mind and intelligence, and how it may be different in adults 
 and children, in human and in nonhuman animals, and in humans and machines 
 
-## How to Read this Book
+# How to Read this Book
 This book is divided up into sub-modules (and sub-submodules).
 They are like chapters (and sub-chapters) within a book.
  
