@@ -53,16 +53,9 @@
 #sidebar ul p {
     color: #fff;
     padding: 10px;
+    font-size: 1.2em;
 }
 
-/*dropdown */
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-    text-decoration: none;
-    position: relative;  /*required to position caret*/
-}
 
 /*dropdown caret*/
 #sidebar ul li a span {
@@ -73,6 +66,16 @@
     transform: translateY(-50%);
 }
 
+/*dropdown 0th level */
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.0em;
+    display: block;
+    text-decoration: none;
+    position: relative;  /*required to position caret*/
+    background: #000066;
+}
+
 #sidebar ul li a:hover {
     color: #7386D5;
     background: #fff;
@@ -80,18 +83,25 @@
     transition: all 0.3s;
 }
 
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
-    text-decoration: none;
-}
-
-/*submenu links*/
-ul ul a {
+/*dropdown 1st level*/
+#sidebar ul ul li a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #191b3f;
+    background: #000088;
+}
+
+/*dropdown 2nd level*/
+#sidebar ul ul ul li a {
+    font-size: 0.8em !important;
+    padding-left: 60px !important;
+    background: #0000AA;
+}
+
+/*dropdown 4th level*/
+#sidebar ul ul ul ul li a {
+    font-size: 0.7em !important;
+    padding-left: 90px !important;
+    background: #0000CC;
 }
 
 /*this affects module tree in unexpected way - how to restrict this to aparticular url?*/
