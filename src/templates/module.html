@@ -58,35 +58,27 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <table border="0" width="100%">
-                        <tr>
-                            <td>{{ heading }}</td>
-                            <td>
-                                <div class="navbar-header">
-                                    <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                        <i class="glyphicon glyphicon-align-left"></i>
-                                        <span>Toggle Sidebar</span>
-                                    </button>
-                                </div>
+                    {{ heading }}
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span>Toggle Sidebar</span>
+                        </button>
+                    </div>
 
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav navbar-right">
-                                        {% for i in range(3) %}
-                                            <li><a href="#">{{ i }}</a>      </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div
-                            </td>
-                        </tr>
-
-                    </table>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            {% for i in range(3) %}
+                                <li><a href="#">{{ i }}</a>      </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
 
                 </div>
                 <div class="panel-body">
                     {{ content | safe }}
                 </div>
             </div>
-
 
         </div>
     </div>
