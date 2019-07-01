@@ -2,16 +2,16 @@
 
 #### How do you define the mind?
 
-Think about your mind for a moment, if you can?
 ---
+Think about your mind for a moment, if you can?
 
  - What is your mind's purpose?
  - What are its properties or subcomponents? 
 
 
 #### What counts as a mind?
----
 
+---
  - Do nonhuman animals have minds? Why or why not? How would you know?
  - Do newborn infants have minds? When does the mind "begin"?
  - Can computers or other human-made things have a mind? Why or why not.
