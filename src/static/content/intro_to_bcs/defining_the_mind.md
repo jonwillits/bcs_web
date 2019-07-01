@@ -1,11 +1,12 @@
 ### Pre-Reading Questions
 
 #### How do you define the mind?
+<br>
 Think about your mind for a moment, if you can?
-<ul>
-    <li>What is your mind's purpose?
-    <li>What are its properties or subcomponents? 
-</ul>
+
+ - What is your mind's purpose?
+ - What are its properties or subcomponents? 
+ 
 <br>
 
 #### What counts as a mind?
