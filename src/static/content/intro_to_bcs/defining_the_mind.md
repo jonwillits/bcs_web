@@ -1,10 +1,13 @@
+---
 ### 0. Pre-Reading Questions
+<br>
 
 #### How do you define the mind?
 Think about your mind for a moment, if you can?
+
  - What is your mind's purpose?
  - What are its properties or subcomponents? 
-
+<br>
 
 #### What counts as a mind?
  - Do nonhuman animals have minds? Why or why not? How would you know?
