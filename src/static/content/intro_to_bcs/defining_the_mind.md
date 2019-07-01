@@ -29,17 +29,19 @@ This is the fact that he must, in fact, exist.
 Because if he did not exist, then there was no way he could be thinking about this uncertainty, or asking this question, in the first place.
 The very fact that he could think, was evidence that he did, in fact, exist.
 <br>
-
+<br>
 ---
 
 ### 2. A definition of mind
 Some text
-
+<br>
+<br>
 ---
 
 ### 3. What counts as a mind?
 Some text
-
+<br>
+<br>
 --- 
 
 ### 4. Check your understanding
