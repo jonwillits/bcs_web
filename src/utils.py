@@ -4,8 +4,11 @@ from pathlib import Path
 from src import config
 
 
-def to_heading(leaf):
-    return ' '.join([w.capitalize() for w in leaf.split('_')])
+def to_heading(branch, leaf):
+    if leaf == config.Defaults.leaf:
+        return branch.split('/')[-1].replace('_', ' ')
+    else:
+        return ' '.join([w.capitalize() for w in leaf.split('_')])
 
 
 def open_file(content_path, file_name):
@@ -23,7 +26,7 @@ def default_content(md_file_name):
                "<h3><a href='/modules' style='text-decoration: none;'>&lArr; Return to Modules</a></h3>"
     else:
         return "<h2>Content coming soon...</h2>" \
-               "<h3><a href='leaf=landing' style='text-decoration: none;'>&lArr; Return to Module</a></h3>"
+               "<h3><a href='leaf=home' style='text-decoration: none;'>&lArr; Return to Module</a></h3>"
 
 
 def load_content_and_submodules(static_path_name, branch_path_name, md_file_name):

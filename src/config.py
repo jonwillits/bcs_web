@@ -1,4 +1,4 @@
 
 
 class Defaults:
-    leaf = 'landing'
+    leaf = 'home'

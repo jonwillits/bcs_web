@@ -44,7 +44,7 @@ def module(branch, leaf=config.Defaults.leaf):
                                                       md_file_name)
     return render_template('module.html',
                            nodes=branch.split('/'),
-                           heading=to_heading(leaf),
+                           heading=to_heading(branch, leaf),
                            content=content,
                            submodules=submodules)
 
