@@ -1,4 +1,4 @@
-## What is Brain and Cognitive Science?
+## 1.0 What is Brain and Cognitive Science?
 
 <style type="text/css">
 .submodule_toc  {border: none;}
