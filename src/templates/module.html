@@ -57,7 +57,21 @@
 
 
             <div class="panel panel-default">
-                <div class="panel-heading">{{ heading }}</div>
+                <div class="panel-heading">
+                    <table>
+                        <tr>
+                            <td>{{ heading }}</td>
+                            <td>
+                                <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span>Toggle Sidebar</span>
+                        </button>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
                 <div class="panel-body">
                     {{ content | safe }}
                 </div>
