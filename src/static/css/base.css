@@ -76,6 +76,12 @@ content (module.html)
     border-color: darkgrey;
 }
 
+#content-module hr {
+    display: block; height: 1px;
+    border: 0; border-top: 1px solid #7386D5;
+    margin: 1em 0; padding: 0;
+}
+
 /*this is only next to side nav in module.html*/
 .navbar {
     min-width: 384px;
