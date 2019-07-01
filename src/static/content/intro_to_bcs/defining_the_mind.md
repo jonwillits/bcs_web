@@ -1,23 +1,19 @@
-### Pre-Reading Questions
+### 0. Pre-Reading Questions
 
 #### How do you define the mind?
-
----
 Think about your mind for a moment, if you can?
-
  - What is your mind's purpose?
  - What are its properties or subcomponents? 
 
 
 #### What counts as a mind?
-
----
  - Do nonhuman animals have minds? Why or why not? How would you know?
  - Do newborn infants have minds? When does the mind "begin"?
  - Can computers or other human-made things have a mind? Why or why not.
 
+---
 
-### What is a mind?
+### 1. What is a mind?
 Your mind should be easy to understand. Consider how much experience you have with it. 
 Every moment you are there, it is there too. 
 In fact, this equivalence of your mind with your very existence was at the core of the French philosopher Descartes’s "I think, therefore I am" argument.
@@ -31,15 +27,19 @@ Because if he did not exist, then there was no way he could be thinking about th
 The very fact that he could think, was evidence that he did, in fact, exist.
 <br>
 
-### A definition of mind
+---
+
+### 2. A definition of mind
 Some text
 
+---
 
-### What counts as a mind?
+### 3. What counts as a mind?
 Some text
 
+--- 
 
-### Check your understanding
+### 4. Check your understanding
  1. According to the text above, what is the definition of a mind?
  - What is it's purpose?
  - What are its properties?
