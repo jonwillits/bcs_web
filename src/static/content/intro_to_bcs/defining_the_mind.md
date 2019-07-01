@@ -1,21 +1,21 @@
 ### Pre-Reading Questions
 
 #### How do you define the mind?
-<br>
+
 Think about your mind for a moment, if you can?
+---
 
  - What is your mind's purpose?
  - What are its properties or subcomponents? 
- 
-<br>
+
 
 #### What counts as a mind?
-<ul>
-    <li>Do nonhuman animals have minds? Why or why not? How would you know?
-    <li>Do newborn infants have minds? When does the mind "begin"?
-    <li>Can computers or other human-made things have a mind? Why or why not.
-</ul>
-<br>
+---
+
+ - Do nonhuman animals have minds? Why or why not? How would you know?
+ - Do newborn infants have minds? When does the mind "begin"?
+ - Can computers or other human-made things have a mind? Why or why not.
+
 
 ### What is a mind?
 Your mind should be easy to understand. Consider how much experience you have with it. 
@@ -33,21 +33,19 @@ The very fact that he could think, was evidence that he did, in fact, exist.
 
 ### A definition of mind
 Some text
-<br>
+
 
 ### What counts as a mind?
 Some text
-<br>
+
 
 ### Check your understanding
-<ol>
-    <li>According to the text above, what is the definition of a mind?
-    <ul>
-        <li>What is it's purpose?
-        <li>What are its properties?
-        <li>What are its functions?
-    </ul>
-    <li>How does the text say we should approach the question of what counts as a mind, and whether we can consider infants,
-        nonhuman animals, and machines to have minds?
-<ul>
+ 1. According to the text above, what is the definition of a mind?
+ - What is it's purpose?
+ - What are its properties?
+ - What are its functions?
+
+ 2. How does the text say we should approach the question of what counts as a mind, and whether we can consider infants,
+ nonhuman animals, and machines to have minds?
+
 
