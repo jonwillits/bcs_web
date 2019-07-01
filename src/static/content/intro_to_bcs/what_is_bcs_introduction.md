@@ -1,7 +1,7 @@
 ## What is Brain and Cognitive Science?
 
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
+.tg  {border: none;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
 .tg .tg-b8m3{background-color:#171933;color:#ffffff;border-color:#000000;text-align:left;vertical-align:top}
@@ -17,7 +17,15 @@
     <th class="tg-b8m3" colspan="3"><span style="font-weight:bold">Submodule Outline</span><br></th>
   </tr>
   <tr>
-    <td class="tg-73oq" colspan="3">1. Defining the Mind<br><br>2. The Relationship Between Mind and Brain<br><br>3. Antecedents of Brain and Cognitive Science<br><br>4. The Cognitive Revolution<br><br>5. The Maturation of Neuroscience<br><br><br>6. Defining Modern Brain and Cognitive Science<br>7. Ten Questions About Mind and Brain<br></td>
+    <td class="tg-73oq" colspan="3">
+        1. Defining the Mind<br><br>
+        2. The Relationship Between Mind and Brain<br><br>
+        3. Antecedents of Brain and Cognitive Science<br><br>
+        4. The Cognitive Revolution<br><br>
+        5. The Maturation of Neuroscience<br><br>
+        6. Defining Modern Brain and Cognitive Science<br><br>
+        7. Ten Questions About Mind and Brain<br>
+    </td>
   </tr>
   <tr>
     <td class="tg-0pky" colspan="5"></td>
