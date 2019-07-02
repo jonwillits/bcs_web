@@ -1,4 +1,4 @@
-# Defining the Mind
+# 1.1. Defining the Mind
 <br>
 
 ---

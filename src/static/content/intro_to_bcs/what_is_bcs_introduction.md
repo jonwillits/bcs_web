@@ -1,4 +1,4 @@
-# What is Brain and Cognitive Science?
+# 1.0. What is BCS Introduction?
 
 ---
 ## Submodule Overview

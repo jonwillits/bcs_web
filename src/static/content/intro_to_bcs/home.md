@@ -1,6 +1,9 @@
 # Brain and Cognitive Science
 
+---
 ## What is Brain and Cognitive Science
+
+---
 Brain and Cognitive Science (BCS) is the study of the mind and the brain, using a wide range methodologies and 
 approaches, including those from biology, neuroscience, psychology, anthropology, linguistics, philosophy, and 
 computer science.
@@ -14,8 +17,10 @@ and children, in human and in nonhuman animals, and in humans and machines.
  - how "non-cognitive" properties of organisms (like bodies, emotions, and personalities) interact with the mind
 to shape and create behavior
 
-
+---
 ## About this Module
+
+---
 This module is designed to provide an introduction to Brain and Cognitive Science (BCS).
 The intention is to cover BCS is it's full interdisciplinary glory, including:
 
@@ -25,8 +30,10 @@ The intention is to cover BCS is it's full interdisciplinary glory, including:
  - describing some of the main topics of study in BCS, including sensation and perception, learning and memory, 
  language and semantic knowledge, and intelligence, reasoning, and decision making.
  
-
+---
 ## How to Read this Book
+
+---
 This module is divided up into sub-modules (and sub-submodules).
 They are like chapters (and sub-chapters) within a book.
 This particular module is written in a linear manner, and so can be read like a book.
