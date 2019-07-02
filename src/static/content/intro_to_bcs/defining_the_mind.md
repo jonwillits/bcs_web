@@ -1,7 +1,7 @@
 ---
 ### 0. Pre-Reading Questions
-<br>
 
+---
 #### How do you define the mind?
 Think about your mind for a moment, if you can?
 
@@ -14,9 +14,12 @@ Think about your mind for a moment, if you can?
  - Do newborn infants have minds? When does the mind "begin"?
  - Can computers or other human-made things have a mind? Why or why not.
 
----
+<br>
 
+---
 ### 1. What is a mind?
+
+---
 Your mind should be easy to understand. Consider how much experience you have with it. 
 Every moment you are there, it is there too. 
 In fact, this equivalence of your mind with your very existence was at the core of the French philosopher Descartes’s "I think, therefore I am" argument.
