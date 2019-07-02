@@ -1,3 +1,5 @@
+# What is Brain and Cognitive Science?
+
 ## What this Submodule is About
 
 This submodule provides an introduction to the course as a whole.
