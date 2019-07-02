@@ -7,7 +7,7 @@ Think about your mind for a moment, if you can?
 
  - What is your mind's purpose?
  - What are its properties or subcomponents? 
-<br>
+<br><br>
 
 #### What counts as a mind?
  - Do nonhuman animals have minds? Why or why not? How would you know?
@@ -33,21 +33,27 @@ Because if he did not exist, then there was no way he could be thinking about th
 The very fact that he could think, was evidence that he did, in fact, exist.
 <br>
 <br>
----
 
+---
 ### 2. A definition of mind
-Some text
-<br>
-<br>
+
 ---
-
-### 3. What counts as a mind?
 Some text
 <br>
 <br>
---- 
 
+---
+### 3. What counts as a mind?
+
+---
+Some text
+<br>
+<br>
+
+--- 
 ### 4. Check your understanding
+
+---
  1. According to the text above, what is the definition of a mind?
  - What is it's purpose?
  - What are its properties?
