@@ -1,7 +1,9 @@
 # What is Brain and Cognitive Science?
 
-## What this Submodule is About
+---
+## Submodule Overview
 
+---
 This submodule provides an introduction to the course as a whole.
 We will discuss useful scientific definitions of the mind, talk about the relationship
 between the mind and the brain, and talk about the early history of the field.
@@ -9,8 +11,10 @@ The submodule will conclude by summarizing the current state of the field of bra
 cognitive science, and by discussing ten important and unanswered questions about the mind
 and brain.
 
+---
 ## Submodule Outline
 
+---
  1. Defining the Mind
  2. The Relationship Between Mind and Brain
  3. Antecedents of Brain and Cognitive Science
@@ -19,9 +23,10 @@ and brain.
  6. Defining Modern Brain and Cognitive Science
  7. Ten Questions About Mind and Brain
 
-
+---
 ## How to Read this Submodule
 
+---
 As described in the preface, one important principle of this book will be applying what cognitive scientists have 
 learned about the learning process itself to the writing of this book, and the advice about how to read it. One of the 
 most important principles about reading and retaining information is that you get a lot more out of it if you are 

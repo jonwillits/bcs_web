@@ -1,4 +1,6 @@
-## What is Brain and Cognitive Science?
+# Brain and Cognitive Science
+
+## What is Brain and Cognitive Science
 Brain and Cognitive Science (BCS) is the study of the mind and the brain, using a wide range methodologies and 
 approaches, including those from biology, neuroscience, psychology, anthropology, linguistics, philosophy, and 
 computer science.
