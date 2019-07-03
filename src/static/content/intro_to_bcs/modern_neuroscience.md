@@ -1,4 +1,4 @@
-# 1.4.2. Interdisciplinary Inspirations
+# 1.5.4 Modern Neuroscience
 
 ---
 ### 0. Pre-Reading Questions
