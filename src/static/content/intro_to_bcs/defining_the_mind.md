@@ -1,5 +1,4 @@
 # 1.1. Defining the Mind
-<br>
 
 ---
 ### 0. Pre-Reading Questions
