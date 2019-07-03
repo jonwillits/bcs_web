@@ -5,19 +5,15 @@
 ### 0. Pre-Reading Questions
 
 ---
-#### How do you define the mind?
-Think about your mind for a moment, if you can?
-
- - What is your mind's purpose?
- - What are its properties or subcomponents? 
-<br><br>
-
-#### What counts as a mind?
+ 1. How do you define the mind?
+ 2. What is the purpose of a mind? Why have one at all?
+ 3. What are the properties, parts, or subcomponents or a mind?
+ 4. What counts as a mind?
  - Do nonhuman animals have minds? Why or why not? How would you know?
  - Do newborn infants have minds? When does the mind "begin"?
  - Can computers or other human-made things have a mind? Why or why not.
 
-<br>
+
 
 ---
 ### 1. What is a mind?
@@ -34,24 +30,18 @@ Descartes concluded that there was one thing he could be certain of.
 This is the fact that he must, in fact, exist. 
 Because if he did not exist, then there was no way he could be thinking about this uncertainty, or asking this question, in the first place.
 The very fact that he could think, was evidence that he did, in fact, exist.
-<br>
-<br>
 
 ---
 ### 2. A definition of mind
 
 ---
 Some text
-<br>
-<br>
 
 ---
 ### 3. What counts as a mind?
 
 ---
 Some text
-<br>
-<br>
 
 --- 
 ### 4. Check your understanding

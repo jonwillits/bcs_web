@@ -52,7 +52,7 @@ purpose, and engaging your mind in other ways other than running your sense orga
 encoding the material in multiple ways, making connections you otherwise wouldnt have made, and giving yourself more 
 memory cues to recall the information.
 
-### 1. Read and answer the pre-reading questions at the beginning of each chapter. See why.
+### 1. Read and answer the pre-reading questions at the beginning of each chapter.
 Each submodule (1.1, 1.2, etc.) begins with a set of "Pre-Reading Questions". These are not rhetorical questions or 
 there for decoration. You should really read and try to answer these questions, either in your notes or at least in 
 your mind. If you mentally engage with these questions, and think about them before you start reading, it will help 
