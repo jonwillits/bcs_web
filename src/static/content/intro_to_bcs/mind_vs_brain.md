@@ -1,3 +1,6 @@
+# 1.2. Mind vs. Brain
+<br>
+
 ---
 ### 0. Pre-Reading Questions
 
@@ -12,6 +15,7 @@ Is thought, intelligence, and mind possible without a brain?
 Maybe you can have a mind without a brain, maybe not.
 But can you study the mind without studying the brain?
 Can you study the brain without studying a mind?
+<br>
 
 ---
 ### 1. The Relationship Between Mind and Brain
