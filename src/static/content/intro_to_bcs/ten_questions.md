@@ -4,9 +4,7 @@
 ### 0. Pre-Reading Questions
 
 ---
- 1. Question 1
- 2. Question 2
- 3. Question 3
+ 1. What are three questions you have about the mind or brain?
  
 ---
 ### 1. What is a mind, and how does matter give rise to it?
@@ -89,6 +87,5 @@ Some text
 ### 11. Check your understanding
 
 ---
- 1. Question 1
- 2. Question 2
- 3. Question 3.
+ 1. Name two of the questions that were discussed that are the most interesting to you. Why do you find them 
+ interesting?
