@@ -59,6 +59,7 @@
 
 /*dropdown caret*/
 #sidebar ul li a span {
+    color: #fff;
     display: block;
     position: absolute;
     top: 50%;
