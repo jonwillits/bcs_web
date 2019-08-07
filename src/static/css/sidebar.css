@@ -75,6 +75,7 @@
     text-decoration: none;
     position: relative;  /*required to position caret*/
     background: #171940;
+    color: #fff;
 }
 
 #sidebar ul li a:hover {
@@ -86,7 +87,7 @@
 
 /*dropdown 1st level*/
 #sidebar ul ul li a {
-    color: #ffffff;
+    color: #fff;
     font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #181B4B;
@@ -94,7 +95,7 @@
 
 /*dropdown 2nd level*/
 #sidebar ul ul ul li a {
-    color: #ffffff;
+    color: #fff;
     font-size: 0.8em !important;
     padding-left: 60px !important;
     background: #191c55;
@@ -102,7 +103,7 @@
 
 /*dropdown 4th level*/
 #sidebar ul ul ul ul li a {
-    color: #ffffff;
+    color: #fff;
     font-size: 0.7em !important;
     padding-left: 90px !important;
     background: #191C55;
