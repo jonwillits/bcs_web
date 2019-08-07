@@ -59,7 +59,7 @@
 
 /*dropdown caret*/
 #sidebar ul li a span {
-    color: #fff;
+    color: #8C9CBD;
     display: block;
     position: absolute;
     top: 50%;
@@ -75,7 +75,7 @@
     text-decoration: none;
     position: relative;  /*required to position caret*/
     background: #171940;
-    color: #fff;
+    color: #8C9CBD;
 }
 
 #sidebar ul li a:hover {
