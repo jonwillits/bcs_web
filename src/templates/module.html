@@ -20,7 +20,14 @@
                 {% endfor %}
             </div>
 
+            <ul class="list-unstyled components">
 
+                {%  if submodules %}
+                    {{ submodules | safe }}
+                {%  endif %}
+{#                <p>Miscellaneous</p>#}
+
+            </ul>
 
         </nav>
 
