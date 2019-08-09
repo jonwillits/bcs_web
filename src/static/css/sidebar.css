@@ -109,22 +109,29 @@
     background: #191C55;
 }
 
-/*this affects module tree in unexpected way - how to restrict this to aparticular url?*/
+/*this affects module tree in unexpected way - how to restrict this to a particular url?*/
 @media (max-width: 768px) {
     #sidebar {
         visibility: hidden;
         opacity: 0;
         margin-left: -250px;
     }
-    #sidebar.active {
-        visibility: visible;
-        opacity: 100;
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
+    /*#sidebar.active {*/
+    /*    visibility: visible;*/
+    /*    opacity: 100;*/
+    /*    margin-left: 0;*/
+    /*}*/
+
+    /*remove button text - leaving icon only*/
+    /*#sidebarCollapse span {*/
+    /*    display: none;*/
+    /*}*/
+
+    /*remove button text */
+    #sidebarCollapse {
         display: none;
     }
-
+    /*center content panel*/
     #content {
         padding-right: 0;
         padding-left: 0;
