@@ -111,6 +111,7 @@ content (on all other pages)
 *************************************************************************************************************************/
 
 
+
 .panel-default  {
     min-width: 384px;
 }
@@ -120,6 +121,10 @@ content (on all other pages)
     font-size: 36px;
     color: #171933;
     border: 0 solid #171933;
+}
+
+.panel-body{
+    padding-top: 0;
 }
 
 #content {
