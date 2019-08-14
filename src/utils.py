@@ -29,7 +29,6 @@ def default_content(md_file_name):
 
 
 def load_content_and_submodules(static_path_name, branch_path_name, md_file_name):
-
     content_path = Path(static_path_name) / branch_path_name.lower()
 
     # submodules
@@ -49,3 +48,23 @@ def load_content_and_submodules(static_path_name, branch_path_name, md_file_name
     content = markdown.markdown(md, extensions=['extra', 'smarty'], output_format='html5')
 
     return content, submodules
+
+
+def get_leaves_for_pagination(leaf, md_file_names):
+    try:
+        file_name_idx = md_file_names.index(leaf)
+    except ValueError:
+        previous_leaf = None
+        next_leaf = None
+    else:
+        if leaf == config.Defaults.leaf:  # don't show 'prev' button
+            previous_leaf = None
+            next_leaf = md_file_names[file_name_idx + 1]
+        elif file_name_idx + 1 == len(md_file_names):  # don't show 'next' button
+            previous_leaf = md_file_names[file_name_idx - 1]
+            next_leaf = None
+        else:
+            previous_leaf = md_file_names[file_name_idx - 1]
+            next_leaf = md_file_names[file_name_idx + 1]
+
+    return config.Defaults.leaf, next_leaf, previous_leaf

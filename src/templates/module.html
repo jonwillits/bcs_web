@@ -10,7 +10,7 @@
                 {% for node in nodes %}
                     {{ loop.index0 * 4 * '&nbsp;' | safe}}
                     {%  if loop.index == loop.length %}
-                        <a href={{ url_for('module', branch='/'.join(nodes), leaf='home') }}>
+                        <a href={{ url_for('module', branch='/'.join(nodes), leaf=default_leaf) }}>
                             &rArr; {{ node.replace('_', ' ') }}
                         </a>
                     {%  else %}
@@ -46,37 +46,40 @@
                     {{ content | safe }}
                 </div>
 
-                {%  if next_leaf and previous_leaf %}
-                    <div class="panel-pagination">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href={{ url_for('module', branch='/'.join(nodes), leaf=previous_leaf) }}>Previous</a></li>
+                <div class="panel-pagination">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            {%  if previous_leaf %}
+                                <li class="page-item"><a class="page-link" href={{ url_for('module', branch='/'.join(nodes), leaf=previous_leaf) }}>Prev</a></li>
+                            {% endif %}
+                            {%  if next_leaf or previous_leaf %}
                                 <li class="page-item"><a class="page-link" href="#">Top</a></li>
+                            {% endif %}
+                            {%  if next_leaf %}
                                 <li class="page-item"><a class="page-link" href={{ url_for('module', branch='/'.join(nodes), leaf=next_leaf) }}>Next</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                {%  endif %}
-
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
 
             </div>
-
         </div>
     </div>
 
 
     <script>
 
-        /* persist state of side menu across page loads by showing any dropdown list when the section number of the section requested starts with the section number that is contained in the text of the dropdown */
-
-        const dropdown = document.getElementsByClassName("dropdown-jw");
         const sectionNum = window.location.href.split('m').pop().replace(/_/g, '.').replace(/^0+/, '');
-        for (let i = 0; i < dropdown.length; i++) {
-            const dropdownSectionNum = dropdown[i].textContent.split(' ')[0];
+        const links = document.getElementsByClassName("dropdown-no");
+        const dropdowns = document.getElementsByClassName("dropdown-yes");
+
+        /* persist state of side menu across page loads by showing any dropdown list when the section number of the section requested starts with the section number that is contained in the text of the dropdowns */
+        for (let i = 0; i < dropdowns.length; i++) {
+            const dropdownSectionNum = dropdowns[i].textContent.split(' ')[0];
             console.log(dropdownSectionNum, sectionNum);
             if (sectionNum.startsWith(dropdownSectionNum)) {
-                dropdown[i].classList.add('active');
-                const dropdownContent = dropdown[i].nextElementSibling;
+                dropdowns[i].classList.add('active');
+                const dropdownContent = dropdowns[i].nextElementSibling;
                 if (dropdownContent) {
                     console.log(dropdownContent);
                     if (dropdownContent.style.display === "block") {
@@ -88,13 +91,23 @@
                     console.log('dropdownContent is null')
                 }
             }
+        }
+
+        /* change background of link which user clicked to load this page */
+        for (let i = 0; i < links.length; i++) {
+            const containerSectionNum = links[i].textContent.split(' ')[0];
+            console.log(containerSectionNum, sectionNum);
+            if (containerSectionNum.startsWith(sectionNum)) {
+                links[i].classList.add('reading');
+                console.log('adding tag to class list')
+            }
 
         }
 
         /* module side menu script */
-        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
-        for (let i = 0; i < dropdown.length; i++) {
-            dropdown[i].addEventListener("click", function() {
+        /* Loop through all dropdowns buttons to toggle between hiding and showing its dropdowns content - This allows the user to have multiple dropdowns without any conflict */
+        for (let i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 const dropdownContent = this.nextElementSibling;
                 if (dropdownContent.style.display === "block") {

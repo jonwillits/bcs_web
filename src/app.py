@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import os
 from pathlib import Path
 
-from src.utils import load_content_and_submodules
+from src.utils import load_content_and_submodules, get_leaves_for_pagination
 from src.utils import to_heading
 from src import config
 
@@ -47,20 +47,14 @@ def module(branch, leaf=config.Defaults.leaf):
     # pagination
     module_path = Path('static') / 'content' / branch.lower()
     md_file_names = sorted([p.stem for p in module_path.glob('*.md')])
-    try:
-        file_name_idx = md_file_names.index(leaf)
-    except ValueError:
-        previous_leaf = None
-        next_leaf = None
-    else:
-        previous_leaf = md_file_names[file_name_idx - 1]
-        next_leaf = md_file_names[file_name_idx + 1]
+    default_leaf, next_leaf, previous_leaf = get_leaves_for_pagination(leaf, md_file_names)
 
     return render_template('module.html',
                            nodes=branch.split('/'),
                            heading=to_heading(branch, leaf),
                            content=content,
                            submodules=submodules,
+                           default_leaf=default_leaf,
                            previous_leaf=previous_leaf,
                            next_leaf=next_leaf)
 
