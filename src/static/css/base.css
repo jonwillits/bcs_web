@@ -127,6 +127,10 @@ content (on all other pages)
     padding-top: 0;
 }
 
+.panel-pagination{
+    text-align: center;
+}
+
 #content {
     margin-top: 20px;
     padding-right: 100px;
