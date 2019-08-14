@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import os
 from pathlib import Path
 
-from src.utils import load_content_and_submodules, get_leaves_for_pagination
+from src.utils import load_content, get_leaves_for_pagination
 from src.utils import to_heading
 from src import config
 
@@ -37,23 +37,23 @@ def module(branch, leaf=config.Defaults.leaf):
     print('branch:', branch)
     print('leaf:', leaf)
 
-    # content, submodules
+    # content_path
     static_path_name = app.config['STATIC_PATH_NAME']
-    branch_path_name = branch
+    content_path = Path(static_path_name) / branch.lower()
+
+    # load content
     md_file_name = '{}.md'.format(leaf)
-    content, submodules = load_content_and_submodules(static_path_name,
-                                                      branch_path_name,
-                                                      md_file_name)
+    main_content, side_content = load_content(content_path, md_file_name)
+
     # pagination
-    module_path = Path('static') / 'content' / branch.lower()
-    md_file_names = sorted([p.stem for p in module_path.glob('*.md')])
+    md_file_names = sorted([p.stem for p in content_path.glob('*.md')])
     default_leaf, next_leaf, previous_leaf = get_leaves_for_pagination(leaf, md_file_names)
 
     return render_template('module.html',
                            nodes=branch.split('/'),
                            heading=to_heading(branch, leaf),
-                           content=content,
-                           submodules=submodules,
+                           main_content=main_content,
+                           side_content=side_content,
                            default_leaf=default_leaf,
                            previous_leaf=previous_leaf,
                            next_leaf=next_leaf)

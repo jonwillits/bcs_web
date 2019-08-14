@@ -28,8 +28,7 @@ def default_content(md_file_name):
         return "<h2>Content coming soon...</h2>"
 
 
-def load_content_and_submodules(static_path_name, branch_path_name, md_file_name):
-    content_path = Path(static_path_name) / branch_path_name.lower()
+def load_content(content_path, md_file_name):
 
     # submodules
     sm_file_name = 'submodules.html'

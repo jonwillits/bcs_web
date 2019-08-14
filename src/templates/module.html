@@ -21,8 +21,8 @@
             </div>
 
             <ul class="list-unstyled components">
-                {%  if submodules %}
-                    {{ submodules | safe }}
+                {%  if side_content %}
+                    {{ side_content | safe }}
                 {%  endif %}
             </ul>
 
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="panel-body">
-                    {{ content | safe }}
+                    {{ main_content | safe }}
                 </div>
 
                 <div class="panel-pagination">
