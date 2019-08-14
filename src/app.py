@@ -47,8 +47,14 @@ def module(branch, leaf=config.Defaults.leaf):
     # pagination
     module_path = Path('static') / 'content' / branch.lower()
     md_file_names = sorted([p.stem for p in module_path.glob('*.md')])
-    previous_leaf = md_file_names[md_file_names.index(leaf) - 1]
-    next_leaf = md_file_names[md_file_names.index(leaf) + 1]
+    try:
+        file_name_idx = md_file_names.index(leaf)
+    except ValueError:
+        previous_leaf = None
+        next_leaf = None
+    else:
+        previous_leaf = md_file_names[file_name_idx - 1]
+        next_leaf = md_file_names[file_name_idx + 1]
 
     return render_template('module.html',
                            nodes=branch.split('/'),
