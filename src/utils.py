@@ -1,7 +1,24 @@
 import markdown
-from pathlib import Path
+import os
 
 from src import config
+
+
+def get_password(branch, leaf):
+    supplied_key = '{}_{}'.format(branch, leaf[1:3])  # e.g. extract "07" from a leaf named "m07_3_1"
+    return os.getenv(supplied_key)
+
+
+def is_leaf_restricted(branch, leaf):
+    val = get_password(branch, leaf)
+
+    print('val')
+    print(val)
+
+    if val is not None:
+        return True
+    else:
+        return False
 
 
 def to_heading(branch, leaf):

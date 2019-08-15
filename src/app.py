@@ -1,8 +1,8 @@
-from flask import Flask, render_template, flash, request, session
+from flask import Flask, render_template, flash, request, session, redirect
 import os
 from pathlib import Path
 
-from src.utils import load_content, get_leaves_for_pagination
+from src.utils import load_content, get_leaves_for_pagination, is_leaf_restricted, get_password
 from src.utils import to_heading
 from src import config
 
@@ -38,8 +38,8 @@ def module(branch, leaf=config.Defaults.leaf):
 
     # TODO password protect some urls
 
-    if '10_' in leaf and not session.get('logged_in'):
-        return render_template('login.html')
+    if is_leaf_restricted(branch, leaf) and not session.get('logged_in'):
+        return render_template('login.html', branch=branch, leaf=leaf)
 
     # content_path
     static_path_name = app.config['STATIC_PATH_NAME']
@@ -72,14 +72,19 @@ def blog():
 def about():
     return render_template('about.html')
 
-@app.route('/login', methods=['POST'])
-def do_admin_login():
-    if request.form['password'] == 'password' and request.form['username'] == 'admin':
+
+@app.route('/login/<path:branch>/leaf=<leaf>', methods=['POST'])
+def login(branch, leaf=config.Defaults.leaf):
+
+    print()
+    print(request.form['password'])
+    print(get_password(branch, leaf))
+
+    if request.form['password'] == get_password(branch, leaf):
         session['logged_in'] = True
     else:
-        flash('wrong password!')
-    return home()
-
+        flash('Incorrect password. Please try again.')
+    return redirect('home')
 
 
 if __name__ == '__main__':
