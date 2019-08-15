@@ -4,31 +4,30 @@ import os
 from src import config
 
 
-def get_password(branch, leaf):
-    supplied_key = '{}_{}'.format(branch, leaf[1:3])  # e.g. extract "07" from a leaf named "m07_3_1"
-    return os.getenv(supplied_key)
+def to_area_name(branch, leaf):
+    return '{}_{}'.format(branch, leaf[1:3])  # e.g. extract "07" from a leaf named "m07_3_1"
 
 
-def is_leaf_restricted(branch, leaf):
-    val = get_password(branch, leaf)
+def get_password(area_name):
+    return os.getenv(area_name)
 
-    print('val')
-    print(val)
 
-    if val is not None:
+def is_area_allowed(area_name):
+    val = get_password(area_name)
+    if val is None:
         return True
     else:
         return False
 
 
-def to_heading(branch, leaf):
-    module_name = branch.split('/')[-1].replace('_', ' ')
-    if leaf == config.Defaults.leaf:
-        leaf_name = leaf
-    else:
-        leaf_name = '.'.join([w.capitalize() for w in leaf[1:].split('_')])
-    res = '{} {}'.format(module_name, leaf_name)
-    return res
+# def to_heading(branch, leaf):
+#     module_name = branch.split('/')[-1].replace('_', ' ')
+#     if leaf == config.Defaults.leaf:
+#         leaf_name = leaf
+#     else:
+#         leaf_name = '.'.join([w.capitalize() for w in leaf[1:].split('_')])
+#     res = '{} {}'.format(module_name, leaf_name)
+#     return res
 
 
 def open_file(content_path, file_name):

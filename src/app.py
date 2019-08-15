@@ -2,8 +2,11 @@ from flask import Flask, render_template, url_for, request, session, redirect
 import os
 from pathlib import Path
 
-from src.utils import load_content, get_leaves_for_pagination, is_leaf_restricted, get_password
-from src.utils import to_heading
+from src.utils import load_content
+from src.utils import get_leaves_for_pagination
+from src.utils import is_area_allowed
+from src.utils import get_password
+from src.utils import to_area_name
 from src import config
 
 app = Flask(__name__)
@@ -20,9 +23,14 @@ print('APPLICATION_ROOT', app.config['APPLICATION_ROOT'])
 print('Current wd:', os.getcwd())
 
 
+@app.route('/x')  # TODO remove
+def x():
+    session.clear()
+    return redirect(url_for('modules'))
+
+
 @app.route('/')
 def home():
-    session.clear()
     return render_template('home.html')
 
 
@@ -35,16 +43,18 @@ def modules():
 @app.route('/module/<path:branch>/leaf=<string:leaf>')
 def module(branch, leaf=config.Defaults.leaf):
 
-    print('logged in', session.get('logged_in'))
-    print('heading', to_heading(branch, leaf))
+    print('======================= module requested')
 
-    # TODO one password logs a user in globally - to all other restricted areas (requiring different passwords)
+    # area_name
+    area_name = to_area_name(branch, leaf)
+    if 'allowed_area_names' not in session:
+        session['allowed_area_names'] = []
 
-    if is_leaf_restricted(branch, leaf) and not session.get('logged_in'):
+    if not is_area_allowed(area_name) and area_name not in session['allowed_area_names']:
         return render_template('login.html',
                                branch=branch,
                                leaf=leaf,
-                               heading=to_heading(branch, leaf))
+                               heading=area_name.replace('_', ' '))
 
     # content_path
     static_path_name = app.config['STATIC_PATH_NAME']
@@ -79,8 +89,9 @@ def about():
 
 @app.route('/login/<path:branch>/leaf=<string:leaf>', methods=['POST'])
 def do_login(branch, leaf=config.Defaults.leaf):
-    if request.form['password'] == get_password(branch, leaf):
-        session['logged_in'] = True
+    area_name = to_area_name(branch, leaf)
+    if request.form['password'] == get_password(area_name):
+        session['allowed_area_names'] += [area_name]  # appending does not work (not clear why)
     else:
         if not session.get('num_attempts'):
             session['num_attempts'] = 1
