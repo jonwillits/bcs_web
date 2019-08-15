@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, request, session
 import os
 from pathlib import Path
 
@@ -17,7 +17,6 @@ else:
 
 print('ENV', app.config['ENV'])
 print('APPLICATION_ROOT', app.config['APPLICATION_ROOT'])
-
 print('Current wd:', os.getcwd())
 
 
@@ -36,6 +35,11 @@ def modules():
 def module(branch, leaf=config.Defaults.leaf):
     print('branch:', branch)
     print('leaf:', leaf)
+
+    # TODO password protect some urls
+
+    if '10_' in leaf and not session.get('logged_in'):
+        return render_template('login.html')
 
     # content_path
     static_path_name = app.config['STATIC_PATH_NAME']
@@ -67,6 +71,15 @@ def blog():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/login', methods=['POST'])
+def do_admin_login():
+    if request.form['password'] == 'password' and request.form['username'] == 'admin':
+        session['logged_in'] = True
+    else:
+        flash('wrong password!')
+    return home()
+
 
 
 if __name__ == '__main__':
