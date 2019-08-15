@@ -1,4 +1,4 @@
-from flask import Flask, render_template, flash, request, session, redirect
+from flask import Flask, render_template, url_for, request, session, redirect
 import os
 from pathlib import Path
 
@@ -22,6 +22,7 @@ print('Current wd:', os.getcwd())
 
 @app.route('/')
 def home():
+    session.clear()
     return render_template('home.html')
 
 
@@ -31,15 +32,19 @@ def modules():
 
 
 @app.route('/module/<path:branch>/')
-@app.route('/module/<path:branch>/leaf=<leaf>')
+@app.route('/module/<path:branch>/leaf=<string:leaf>')
 def module(branch, leaf=config.Defaults.leaf):
-    print('branch:', branch)
-    print('leaf:', leaf)
 
-    # TODO password protect some urls
+    print('logged in', session.get('logged_in'))
+    print('heading', to_heading(branch, leaf))
+
+    # TODO one password logs a user in globally - to all other restricted areas (requiring different passwords)
 
     if is_leaf_restricted(branch, leaf) and not session.get('logged_in'):
-        return render_template('login.html', branch=branch, leaf=leaf)
+        return render_template('login.html',
+                               branch=branch,
+                               leaf=leaf,
+                               heading=to_heading(branch, leaf))
 
     # content_path
     static_path_name = app.config['STATIC_PATH_NAME']
@@ -55,7 +60,6 @@ def module(branch, leaf=config.Defaults.leaf):
 
     return render_template('module.html',
                            nodes=branch.split('/'),
-                           heading=to_heading(branch, leaf),
                            main_content=main_content,
                            side_content=side_content,
                            default_leaf=default_leaf,
@@ -73,19 +77,18 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/login/<path:branch>/leaf=<leaf>', methods=['POST'])
-def login(branch, leaf=config.Defaults.leaf):
-
-    print()
-    print(request.form['password'])
-    print(get_password(branch, leaf))
-
+@app.route('/login/<path:branch>/leaf=<string:leaf>', methods=['POST'])
+def do_login(branch, leaf=config.Defaults.leaf):
     if request.form['password'] == get_password(branch, leaf):
         session['logged_in'] = True
     else:
-        flash('Incorrect password. Please try again.')
-    return redirect('home')
+        if not session.get('num_attempts'):
+            session['num_attempts'] = 1
+        else:
+            session['num_attempts'] += 1
+
+    return redirect(url_for('module', branch=branch, leaf=leaf))
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True if os.getenv('APP_MODE') != 'PRODUCTION' else False)

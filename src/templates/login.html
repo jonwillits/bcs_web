@@ -7,20 +7,22 @@
         <div class="panel-body content-text">
             <p>Please login to view restricted content</p>
 
-            <p>{{ branch }}</p>
-            <p>{{ leaf }}</p>
+            {%  if 'num_attempts' in session %}
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Warning!</strong> Incorrect password.
+                    <p>Number of failed attempts: {{ session.num_attempts or 0}}</p>
+                </div>
+            {% endif %}
 
         </div>
 
         <div class="panel-body">
-            <form class="form-inline"  action="{{ url_for('login', branch=branch, leaf=leaf) }}" method="POST">
-                <div class="form-group mb-2">
-                    <label for="staticEmail2" class="sr-only">Email</label>
-                    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
-                </div>
+            <form class="form-inline" action="{{ url_for('do_login', branch=branch, leaf=leaf) }}" method="POST">
+
                 <div class="form-group mx-sm-3 mb-2">
                     <label for="inputPassword2" class="sr-only">Password</label>
-                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password" name="password">
+                    <input type="password" class="form-control" id="inputPassword2" placeholder="Password for {{ heading }}" name="password">
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
             </form>

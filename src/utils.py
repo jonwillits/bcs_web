@@ -22,10 +22,13 @@ def is_leaf_restricted(branch, leaf):
 
 
 def to_heading(branch, leaf):
+    module_name = branch.split('/')[-1].replace('_', ' ')
     if leaf == config.Defaults.leaf:
-        return branch.split('/')[-1].replace('_', ' ')
+        leaf_name = leaf
     else:
-        return ' '.join([w.capitalize() for w in leaf.split('_')])
+        leaf_name = '.'.join([w.capitalize() for w in leaf[1:].split('_')])
+    res = '{} {}'.format(module_name, leaf_name)
+    return res
 
 
 def open_file(content_path, file_name):
