@@ -4,9 +4,8 @@ from pathlib import Path
 
 from src.utils import load_content
 from src.utils import get_leaves_for_pagination
-from src.utils import is_area_allowed
 from src.utils import get_password
-from src.utils import to_area_name
+from src.utils import to_area
 from src import config
 
 app = Flask(__name__)
@@ -43,18 +42,20 @@ def modules():
 @app.route('/module/<path:branch>/leaf=<string:leaf>')
 def module(branch, leaf=config.Defaults.leaf):
 
-    print('======================= module requested')
+    print('======================= {} {} requested'.format(branch, leaf))
 
-    # area_name
-    area_name = to_area_name(branch, leaf)
+    # init session
     if 'allowed_area_names' not in session:
         session['allowed_area_names'] = []
 
-    if not is_area_allowed(area_name) and area_name not in session['allowed_area_names']:
+    # check access rights
+    area = to_area(branch, leaf)
+    restricted_areas = [val for val in os.environ if val.startswith(branch)]
+    if area in restricted_areas and area not in session['allowed_area_names']:
         return render_template('login.html',
                                branch=branch,
                                leaf=leaf,
-                               heading=area_name.replace('_', ' '))
+                               heading=area.replace('_', ' '))
 
     # content_path
     static_path_name = app.config['STATIC_PATH_NAME']
@@ -72,6 +73,7 @@ def module(branch, leaf=config.Defaults.leaf):
                            nodes=branch.split('/'),
                            main_content=main_content,
                            side_content=side_content,
+                           restricted_area_nums=[str(int(area.split('_')[-1])) for area in restricted_areas],
                            default_leaf=default_leaf,
                            previous_leaf=previous_leaf,
                            next_leaf=next_leaf)
@@ -89,7 +91,7 @@ def about():
 
 @app.route('/login/<path:branch>/leaf=<string:leaf>', methods=['POST'])
 def do_login(branch, leaf=config.Defaults.leaf):
-    area_name = to_area_name(branch, leaf)
+    area_name = to_area(branch, leaf)
     if request.form['password'] == get_password(area_name):
         session['allowed_area_names'] += [area_name]  # appending does not work (not clear why)
     else:

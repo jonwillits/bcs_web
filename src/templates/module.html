@@ -74,19 +74,35 @@
 
     <script>
 
-        const sectionNum = window.location.href.split('m').pop().replace(/_/g, '.').replace(/^0+/, '');
+        const leafNum = window.location.href.split('m').pop().replace(/_/g, '.').replace(/^0+/, '');
         const links = document.getElementsByClassName("dropdown-no");
         const dropdowns = document.getElementsByClassName("dropdown-yes");
 
-        /* persist state of side menu across page loads by showing any dropdown list when the section number of the section requested starts with the section number that is contained in the text of the dropdowns */
+        const restrictedAreaNums = ["{{ '", "'.join(restricted_area_nums) | safe }}"];
+        for (let i = 0; i < links.length; i++) {
+            const linkLeafNum = links[i].textContent.split(' ')[0];
+            let areaNum = linkLeafNum.split('.')[0];
+            console.log(areaNum, restrictedAreaNums);
+            if (restrictedAreaNums.includes(areaNum)) {
+                console.log('Found leaf in restricted area');
+
+                /* span element must be created at each iteration of for loop */
+                let lockIcon = document.createElement('span');
+                lockIcon.classList.add('glyphicon');
+                lockIcon.classList.add('glyphicon-lock');
+                links[i].appendChild(lockIcon);
+                console.log(lockIcon)
+            }
+
+        }
+
+        /* persist state of side menu across page loads by showing any dropdown list when the leaf number of the leaf requested starts with the leaf number that is contained in the text of the dropdowns */
         for (let i = 0; i < dropdowns.length; i++) {
-            const dropdownSectionNum = dropdowns[i].textContent.split(' ')[0];
-            console.log(dropdownSectionNum, sectionNum);
-            if (sectionNum.startsWith(dropdownSectionNum)) {
+            const dropdownLeafNum = dropdowns[i].textContent.split(' ')[0];
+            if (leafNum.startsWith(dropdownLeafNum)) {
                 dropdowns[i].classList.add('active');
                 const dropdownContent = dropdowns[i].nextElementSibling;
                 if (dropdownContent) {
-                    console.log(dropdownContent);
                     if (dropdownContent.style.display === "block") {
                         dropdownContent.style.display = "none";
                     } else {
@@ -100,11 +116,9 @@
 
         /* change background of link which user clicked to load this page */
         for (let i = 0; i < links.length; i++) {
-            const containerSectionNum = links[i].textContent.split(' ')[0];
-            console.log(containerSectionNum, sectionNum);
-            if (containerSectionNum.startsWith(sectionNum)) {
+            const linkLeafNum = links[i].textContent.split(' ')[0];
+            if (linkLeafNum.startsWith(leafNum)) {
                 links[i].classList.add('reading');
-                console.log('adding tag to class list')
             }
 
         }

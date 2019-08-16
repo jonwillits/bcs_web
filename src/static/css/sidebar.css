@@ -12,8 +12,7 @@
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
+    min-width: 300px;
     background: #171933;
     transition: all 0.3s;
     border-radius: 3px;
@@ -44,14 +43,22 @@
     text-decoration: none;
 }
 
+/*lock icon*/
+#sidebar ul li a span.glyphicon-lock {
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    font-size: 10px;  /* make icons constant size across levels */
+}
 
 /*dropdowns caret*/
-#sidebar ul li a span {
+#sidebar ul li a span.caret {
     color: #8C9CBD;
     display: block;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 10px;  /*10px from right */
     transform: translateY(-50%);
 }
 
