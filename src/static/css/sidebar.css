@@ -44,7 +44,7 @@
 }
 
 /*lock icon*/
-#sidebar ul li a span.glyphicon-lock {
+#sidebar ul li a span.glyphicon {
     right: 7px;
     top: 50%;
     transform: translateY(-50%);

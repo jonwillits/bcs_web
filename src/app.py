@@ -51,7 +51,8 @@ def module(branch, leaf=config.Defaults.leaf):
     # check access rights
     area = to_area(branch, leaf)
     restricted_areas = [val for val in os.environ if val.startswith(branch)]
-    if area in restricted_areas and area not in session['allowed_area_names']:
+    allowed_area_names = session['allowed_area_names']
+    if area in restricted_areas and area not in allowed_area_names:
         return render_template('login.html',
                                branch=branch,
                                leaf=leaf,
@@ -74,6 +75,7 @@ def module(branch, leaf=config.Defaults.leaf):
                            main_content=main_content,
                            side_content=side_content,
                            restricted_area_nums=[str(int(area.split('_')[-1])) for area in restricted_areas],
+                           allowed_area_nums=[str(int(area.split('_')[-1])) for area in allowed_area_names],
                            default_leaf=default_leaf,
                            previous_leaf=previous_leaf,
                            next_leaf=next_leaf)

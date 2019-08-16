@@ -78,22 +78,28 @@
         const links = document.getElementsByClassName("dropdown-no");
         const dropdowns = document.getElementsByClassName("dropdown-yes");
 
+        /* add lock icons next to links to leaves in restricted areas */
         const restrictedAreaNums = ["{{ '", "'.join(restricted_area_nums) | safe }}"];
+        const allowedAreaNums = ["{{ '", "'.join(allowed_area_nums) | safe }}"];
         for (let i = 0; i < links.length; i++) {
             const linkLeafNum = links[i].textContent.split(' ')[0];
             let areaNum = linkLeafNum.split('.')[0];
             console.log(areaNum, restrictedAreaNums);
-            if (restrictedAreaNums.includes(areaNum)) {
+            if (allowedAreaNums.includes(areaNum)) {
+                console.log('Found leaf in allowed area');
+                /* span element must be created at each iteration of for loop */
+                let okIcon = document.createElement('span');
+                okIcon.classList.add('glyphicon');
+                okIcon.classList.add('glyphicon-ok');
+                links[i].appendChild(okIcon)
+            } else if (restrictedAreaNums.includes(areaNum)) {
                 console.log('Found leaf in restricted area');
-
                 /* span element must be created at each iteration of for loop */
                 let lockIcon = document.createElement('span');
                 lockIcon.classList.add('glyphicon');
                 lockIcon.classList.add('glyphicon-lock');
                 links[i].appendChild(lockIcon);
-                console.log(lockIcon)
             }
-
         }
 
         /* persist state of side menu across page loads by showing any dropdown list when the leaf number of the leaf requested starts with the leaf number that is contained in the text of the dropdowns */
