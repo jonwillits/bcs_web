@@ -123,7 +123,7 @@ content (on all other pages)
     border: 0 solid #171933;
 }
 
-.panel-body{
+.panel-body.md-content{
     padding-top: 0;
 }
 
