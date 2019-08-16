@@ -172,7 +172,7 @@ export class ModuleTree extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {xPos: 300};
+        this.state = {xPos: 300, zoom: 0.9};
     }
 
     /**
@@ -183,12 +183,21 @@ export class ModuleTree extends React.Component {
         this.setState({ xPos:  Math.round(window.outerWidth/2 - 100) });
     }
 
+    // TODO
+    updateZoom() {
+        let max_width = document.getElementById('treeWrapper').parentElement.offsetWidth;
+        this.setState({ zoom:  max_width / 1670 });
+        console.log(max_width, max_width / 1670)
+    }
+
     /**
-     * Add event listener
+     * Add event listeners
      */
     componentDidMount() {
         this.updatexPos();
+        this.updateZoom();
         window.addEventListener("resize", this.updatexPos.bind(this));
+        window.addEventListener("resize", this.updateZoom.bind(this));
     }
 
     /**
@@ -196,6 +205,7 @@ export class ModuleTree extends React.Component {
      */
     componentWillUnmount() {
         window.removeEventListener("resize", this.updatexPos.bind(this));
+        window.removeEventListener("resize", this.updateZoom.bind(this));
     }
 
 
@@ -220,9 +230,10 @@ export class ModuleTree extends React.Component {
             <div id="treeWrapper" style={{width: this.state.xPos * 2 - 50, height: '700px'}}>
                 <Tree data={myTreeData}
                       orientation="vertical"
-                      translate={{x:this.state.xPos, y: 40}}  // make dynamic in response to viewport change
+                      translate={{x:this.state.xPos, y: 40}}  //  dynamic in response to viewport change
+                      zoom={this.state.zoom}  // dynamic
                       zoomable={true}
-                      scaleExtent = {{min: 1.0, max: 1.0}}
+                      scaleExtent = {{min: 0.6, max: 1.0}}
                       pathFunc="straight"
                       initialDepth={1}
                       separation={{siblings: 1.8, nonSiblings: 1.8}}
