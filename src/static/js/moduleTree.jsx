@@ -179,8 +179,8 @@ export class ModuleTree extends React.Component {
      * Calculate & Update state of new xPos
      */
     updatexPos() {
-        // alert('window.outerWidth/2' + window.outerWidth/2);
-        this.setState({ xPos:  Math.round(window.outerWidth/2 - 100) });
+        // 384 is min-width of panel-default
+        this.setState({ xPos:  Math.max((384 / 2) - 16, Math.round(window.outerWidth/2 - 116)) });
     }
 
     // TODO
@@ -227,7 +227,7 @@ export class ModuleTree extends React.Component {
 
     render() {
         return (
-            <div id="treeWrapper" style={{width: this.state.xPos * 2 - 50, height: '700px'}}>
+            <div id="treeWrapper" style={{width: '100%', height: '700px'}}>
                 <Tree data={myTreeData}
                       orientation="vertical"
                       translate={{x:this.state.xPos, y: 40}}  //  dynamic in response to viewport change

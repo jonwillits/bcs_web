@@ -127,20 +127,20 @@
     /*}*/
 
     /*remove button text */
-    #sidebarCollapse {
-        display: none;
-    }
-    /*center content panel*/
-    #content {
-        padding-right: 0;
-        padding-left: 0;
-    }
-    #content-module {
-        padding-right: 0;
-        padding-left: 0;
-    }
-    #content-module .panel {
-        border-radius: 0;
-    }
+    /*#sidebarCollapse {*/
+    /*    display: none;*/
+    /*}*/
+    /*!*center content panel*!*/
+    /*#content {*/
+    /*    padding-right: 0;*/
+    /*    padding-left: 0;*/
+    /*}*/
+    /*#content-module {*/
+    /*    padding-right: 0;*/
+    /*    padding-left: 0;*/
+    /*}*/
+    /*#content-module .panel {*/
+    /*    border-radius: 0;*/
+    /*}*/
 
 }
