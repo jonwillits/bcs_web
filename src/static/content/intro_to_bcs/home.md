@@ -4,6 +4,7 @@
 ## What is Brain and Cognitive Science?
 
 ---
+
 Brain and Cognitive Science (BCS) is the study of the mind and the brain, using a wide range methodologies and 
 approaches, including those from biology, neuroscience, psychology, anthropology, linguistics, philosophy, and 
 computer science.
@@ -89,6 +90,12 @@ for helping you learn and master the content. As we have said, one of the most c
 remembering new information is to turn reading into an active exercise, rather than a passive exercise. So please, do 
 not skip over these activities and interactive sections. They are there for a reason, and often contain important 
 details that are not in the text.
+
+An embedded code example looks like this:
+
+
+<iframe src="https://trinket.io/embed/python/08c444ca7c" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
  
 ### 4. Read and answer the "Check your understanding" questions at the end of each submodule.
 Finally, when you are finished reading each submodule, you will see a set of questions for checking your understanding.
