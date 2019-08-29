@@ -65,9 +65,7 @@ def zero_pad(fn):
 def zero_remove(fn):
     j = []
     for part in fn.split('_'):
-        if 'm' in part:
-            j.append(part)
-        elif '0' == part[0]:
+        if '0' == part[0]:
             j.append(part[1])
         else:
             continue
@@ -80,21 +78,22 @@ def sort_numerically(md_file_names):
     for fn in md_file_names:
         if fn == config.Defaults.leaf:
             continue
-        new = zero_pad(fn.lstrip('m').lstrip('0'))
-        sortable.append('m' + new)
+        new = zero_pad(fn.lstrip('m'))
+        sortable.append(new)
     # sorts numerically
     sorted_fns = sorted(sortable)
     # remove leading zeros
     res = []
     for fn in sorted_fns:
-        res.append(zero_remove(fn))
+        res.append('m' + zero_remove(fn))
     return [config.Defaults.leaf] + res
 
 
 def get_leaves_for_pagination(leaf, md_file_names):
     try:
         file_name_idx = md_file_names.index(leaf)
-    except ValueError:
+    except ValueError as e:
+        print(e)
         previous_leaf = None
         next_leaf = None
     else:
