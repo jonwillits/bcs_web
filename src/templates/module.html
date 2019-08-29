@@ -84,7 +84,6 @@
         for (let i = 0; i < links.length; i++) {
             const linkLeafNum = links[i].textContent.split(' ')[0];
             let areaNum = linkLeafNum.split('.')[0];
-            console.log(areaNum, restrictedAreaNums);
             if (allowedAreaNums.includes(areaNum)) {
                 console.log('Found leaf in allowed area');
                 /* span element must be created at each iteration of for loop */
@@ -123,7 +122,8 @@
         /* change background of link which user clicked to load this page */
         for (let i = 0; i < links.length; i++) {
             const linkLeafNum = links[i].textContent.split(' ')[0];
-            if (linkLeafNum.startsWith(leafNum)) {
+            console.log(linkLeafNum, leafNum);
+            if (linkLeafNum === leafNum + '.') {
                 links[i].classList.add('reading');
             }
 

@@ -53,10 +53,10 @@ def load_content(content_path, md_file_name):
 def zero_pad(fn):
     nums = []
     for part in fn.split('_'):
-        if len(part) == 2:
-            nums.append(part)
-        elif len(part) == 1:
+        if len(part) == 1:
             nums.append('0' + part)
+        elif len(part) == 2: # using double-digits
+            nums.append(part)
         else:
             raise Exception('Naming md files using numbers greater than double-digits is not permitted')
     return '_'.join(nums)
