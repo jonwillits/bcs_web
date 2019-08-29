@@ -26,7 +26,7 @@ def default_content(md_file_name):
         return "<h2>Content coming soon...</h2>" \
                "<h3><a href='/modules' style='text-decoration: none;'>&lArr; Return to Modules</a></h3>"
     else:
-        return "<h2>Content coming soon...</h2>"
+        return "<h2>Content not found</h2>"
 
 
 def load_content(content_path, md_file_name):
@@ -63,13 +63,7 @@ def zero_pad(fn):
 
 
 def zero_remove(fn):
-    j = []
-    for part in fn.split('_'):
-        if '0' == part[0]:
-            j.append(part[1])
-        else:
-            continue
-    return '_'.join(j)
+    return '_'.join([str(int(part)) for part in fn.split('_')]).rstrip('_')
 
 
 def sort_numerically(md_file_names):
@@ -82,6 +76,7 @@ def sort_numerically(md_file_names):
         sortable.append(new)
     # sorts numerically
     sorted_fns = sorted(sortable)
+    print(sorted_fns)
     # remove leading zeros
     res = []
     for fn in sorted_fns:

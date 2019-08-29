@@ -65,7 +65,6 @@ def module(branch, leaf=config.Defaults.leaf):
 
     # pagination
     md_file_names = sort_numerically([p.stem for p in content_path.glob('*.md')])
-    print(content_path)
     print(md_file_names)
     default_leaf, next_leaf, previous_leaf = get_leaves_for_pagination(leaf, md_file_names)
     print(previous_leaf)
