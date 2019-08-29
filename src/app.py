@@ -6,6 +6,7 @@ from src.utils import load_content
 from src.utils import get_leaves_for_pagination
 from src.utils import get_password
 from src.utils import to_area
+from src.utils import sort_numerically
 from src import config
 
 app = Flask(__name__)
@@ -16,10 +17,6 @@ if os.getenv('APP_MODE') == "PRODUCTION":
 else:
     print('Loading dev configs')
     app.config.from_object('dev_configs')
-
-print('ENV', app.config['ENV'])
-print('APPLICATION_ROOT', app.config['APPLICATION_ROOT'])
-print('Current wd:', os.getcwd())
 
 
 @app.route('/x')  # TODO remove
@@ -67,7 +64,9 @@ def module(branch, leaf=config.Defaults.leaf):
     main_content, side_content = load_content(content_path, md_file_name)
 
     # pagination
-    md_file_names = sorted([p.stem for p in content_path.glob('*.md')])
+    md_file_names = sort_numerically([p.stem for p in content_path.glob('*.md')])
+    print(content_path)
+    print(md_file_names)
     default_leaf, next_leaf, previous_leaf = get_leaves_for_pagination(leaf, md_file_names)
 
     return render_template('module.html',

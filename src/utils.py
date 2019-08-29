@@ -50,6 +50,47 @@ def load_content(content_path, md_file_name):
     return content, submodules
 
 
+def zero_pad(fn):
+    nums = []
+    for part in fn.split('_'):
+        if len(part) == 2:
+            nums.append(part)
+        elif len(part) == 1:
+            nums.append('0' + part)
+        else:
+            raise Exception('Naming md files using numbers greater than double-digits is not permitted')
+    return '_'.join(nums)
+
+
+def zero_remove(fn):
+    j = []
+    for part in fn.split('_'):
+        if 'm' in part:
+            j.append(part)
+        elif '0' == part[0]:
+            j.append(part[1])
+        else:
+            continue
+    return '_'.join(j)
+
+
+def sort_numerically(md_file_names):
+    # insert leading zero (but only one leading zero)
+    sortable = []
+    for fn in md_file_names:
+        if fn == config.Defaults.leaf:
+            continue
+        new = zero_pad(fn.lstrip('m').lstrip('0'))
+        sortable.append('m' + new)
+    # sorts numerically
+    sorted_fns = sorted(sortable)
+    # remove leading zeros
+    res = []
+    for fn in sorted_fns:
+        res.append(zero_remove(fn))
+    return [config.Defaults.leaf] + res
+
+
 def get_leaves_for_pagination(leaf, md_file_names):
     try:
         file_name_idx = md_file_names.index(leaf)
