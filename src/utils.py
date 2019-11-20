@@ -76,15 +76,22 @@ def sort_numerically(md_file_names):
         sortable.append(new)
     # sorts numerically
     sorted_fns = sorted(sortable)
-    print(sorted_fns)
     # remove leading zeros
     res = []
     for fn in sorted_fns:
         res.append('m' + zero_remove(fn))
-    return [config.Defaults.leaf] + res
+    return res
 
 
 def get_leaves_for_pagination(leaf, md_file_names):
+
+    # if no content pages are found
+    if not md_file_names:
+        return config.Defaults.leaf, None, None
+    else:
+        # insert home.md in first position
+        md_file_names.insert(0, config.Defaults.leaf)
+
     try:
         file_name_idx = md_file_names.index(leaf)
     except ValueError as e:

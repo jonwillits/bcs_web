@@ -31,7 +31,7 @@ const myTreeData = [
                 name: 'Intro to BCS',
             },
             {
-                name: 'Background & Methods',
+                name: 'Background and Methods',
                 children: [
                     {
                         name: 'Statistical Inference',
@@ -54,10 +54,10 @@ const myTreeData = [
                         name: 'Programming',
                         children: [
                             {
-                                name: 'Python'
+                                name: 'Intro to Python'
                             },
                             {
-                                name: 'R'
+                                name: 'Intro to R'
                             },
                             {
                                 name: 'Data Visualization'
@@ -100,7 +100,7 @@ const myTreeData = [
                             }],
                     },
                     {
-                        name: 'Computation & AI',
+                        name: 'Computation and AI',
                     },
                     {
                         name: 'Linguistics',
@@ -117,7 +117,7 @@ const myTreeData = [
                 name: 'Topics',
                 children: [
                     {
-                        name: 'Concepts & Semantics',
+                        name: 'Concepts and Semantics',
                     },
                     {
                         name: 'Language',
@@ -176,7 +176,7 @@ export class ModuleTree extends React.Component {
     }
 
     /**
-     * Calculate & Update state of new xPos
+     * Calculate and Update state of new xPos
      */
     updatexPos() {
         // 384 is min-width of panel-default
@@ -217,7 +217,7 @@ export class ModuleTree extends React.Component {
             console.log(n.parent.name);
             while (n.parent.name !== 'BCS-Web') {
                 n = n.parent;
-                parent_names.push(n.name.replace(' ', '_'))
+                parent_names.push(n.name.replace(/ /g, '_'))
             }
             const branchName = parent_names.reverse().join('/');
             var url_start = window.location.href.replace('modules', '');
