@@ -23,12 +23,14 @@ they are more motivated to learn, and have a better understanding of why they ar
 As such, this module is organized around the idea of completing particular projects. This means that rather
 than starting with learning all of the simple basic building blocks, and then the medium stuff, and then the big complex things,
 we sometimes have to jump into some of the medium and advanced stuff right at the beginning in order to make programs and do 
-projects that are actually interesting and motivating. Don't worry, it will be 
+projects that are actually interesting and motivating. Don't worry, it will be easy and more fun than the alternative.
 
 ---
 ## The organization of this module
 
-This module is divided up into sub-modules (and sub-sub-modules).
+This module is divided up into sub-modules (and sub-sub-modules). Think of them like chapters in a book. Each of them is
+designed to teach some core parts of python or things that you can do with it that apply to Brain and Cognitive Science.
+The first 10 sections really focus on core Python prinicples, and the sections after that go into applications.
 
 
 ---
