@@ -1,4 +1,4 @@
-# Intro to Programming for Brain and Cognitive Science
+# Intro to Python Programming for Brain and Cognitive Science
 
 ---
 ## Overview of this module
