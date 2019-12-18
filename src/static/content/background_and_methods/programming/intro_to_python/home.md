@@ -18,7 +18,7 @@ this module to have three primary learning objectives:
 ## The teaching technique in this module
 
 This module is organized a little differently than your standard book or tutorial on Python or introduction to programming.
-This is because a major pedagocial assumption is that people who are new learners in a domain learn best when
+This is because a major pedagogical assumption is that people who are new learners in a domain learn best when
 they are more motivated to learn, and have a better understanding of why they are learning the things that they are learning.
 As such, this module is organized around the idea of completing particular projects. This means that rather
 than starting with learning all of the simple basic building blocks, and then the medium stuff, and then the big complex things,
